@@ -32,6 +32,10 @@ public class PlayerData {
         this.registered = registered;
         this.lastPlayed = lastPlayed;
     }
+
+    public String getFirstName() {
+        return firstName;
+    }
     
     //TODO - Add a getter method for each field
     
