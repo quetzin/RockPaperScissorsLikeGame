@@ -4,8 +4,13 @@
  */
 package project1;
 // TODO - import the correct missing libraries
+import project1.PlayerData;
+import java.util.UUID;
+import java.util.ArrayList;
+import java.io.IOException;
+import java.io.File;
 
-
+import java.io.File;
 //Do not modify these library
 import java.time.LocalDateTime;
 import javax.xml.XMLConstants;
@@ -44,11 +49,11 @@ public class Project1 {
         //TODO - the args should be populated with the field data for a new PlayerData object.
         try {
             //TODO - Finish the file path names
-            File xmlFile = new File("src/project1/{replace with correct name}");
-            File xsdFile = new File("src/project1/{replace with correct name}");
+            File xmlFile = new File("src/project1/data.xml");
+            File xsdFile = new File("src/project1/data.xsd");
             
             //TODO - Create a ArrayList of PlayerData called "playerList"
-            //{your code here}
+            ArrayList<PlayerData> playerList = new ArrayList<PlayerData>();
             
             //XML parsing
             Document parsedXML = readXML(xmlFile, xsdFile);
@@ -61,10 +66,10 @@ public class Project1 {
             playerList = populatePlayerList(nodeList);
             
             //TODO - Call constructPlayerFromInput() to create a PlayerData object from the input info.         
-            //{your code here}
+            constructPlayerFromInput();
             
             //TODO - Call addToXML() to add the new player to the Result.xml document.
-            //{your code here}
+            addToXML();
             
             DOMSource src = new DOMSource(parsedXML);
 
@@ -103,7 +108,7 @@ public class Project1 {
                 PlayerData player = constructPlayerFromElement(playerElement);
                 
                 //TODO - Add player to the playerList
-                //{Your code here}
+                playerList.add(player);
             }
         }
         return playerList;
@@ -118,11 +123,18 @@ public class Project1 {
         
         //TODO - Finish creating the field variables for the player
         UUID guid = UUID.fromString(player.getElementsByTagName("guid").item(0).getTextContent());
-        //{Your code here}
+        boolean isActive = Boolean.parseBoolean(player.getElementsByTagName("isActive").item(0).getTextContent());
+        String firstName = String.valueOf(player.getElementsByTagName("firstName").item(0).getTextContent());
+        String lastName = String.valueOf(player.getElementsByTagName("lastName").item(0).getTextContent());
+        String email = String.valueOf(player.getElementsByTagName("email").item(0).getTextContent());
+        int rank = Integer.parseInt(player.getElementsByTagName("rank").item(0).getTextContent());
+        int winRate = Integer.parseInt(player.getElementsByTagName("winRate").item(0).getTextContent());
         LocalDateTime registered = LocalDateTime.parse(player.getElementsByTagName("registered").item(0).getTextContent());
         LocalDateTime lastPlayed = LocalDateTime.parse(player.getElementsByTagName("lastPlayed").item(0).getTextContent());
 
         //TODO - Create a temporary PlayerData variable "newPlayer" to assign the Element data to.
+        PlayerData newPlayer = new PlayerData(guid, isActive, firstName, lastName, email, rank, winRate, registered, lastPlayed);
+   
         
         return newPlayer;
     }
@@ -137,11 +149,16 @@ public class Project1 {
         //TODO - Finish creating the field variables for each player
         UUID guid = UUID.fromString(input[0]);
         boolean isActive = Boolean.valueOf(input[1]);
-        //{Your code goes here}
+        String firstName = String.valueOf(input[2]);
+        String lastName = String.valueOf(input[3]);
+        String email = String.valueOf(input[4]);
+        int rank = Integer.parseInt(input[5]);
+        int winRate = Integer.parseInt(input[6]);
         LocalDateTime registered = LocalDateTime.parse(input[7]);
         LocalDateTime lastPlayed = LocalDateTime.parse(input[8]);
 
         //TODO - Create a temporary PlayerData variable "newPlayer" to assign the input data to.
+        PlayerData newPlayer = new PlayerData(guid, isActive, firstName, lastName, email, rank, winRate, registered, lastPlayed);
         
         return newPlayer;
     }

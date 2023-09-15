@@ -33,7 +33,7 @@ public class PlayerData {
         this.lastPlayed = lastPlayed;
     }
 
-    public UUID getGuid() {
+    public UUID getGUID() {
         return guid;
     }
 
