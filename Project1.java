@@ -66,10 +66,10 @@ public class Project1 {
             playerList = populatePlayerList(nodeList);
             
             //TODO - Call constructPlayerFromInput() to create a PlayerData object from the input info.         
-            constructPlayerFromInput();
+            constructPlayerFromInput(args);
             
             //TODO - Call addToXML() to add the new player to the Result.xml document.
-            addToXML();
+            addToXML(, parsedXML);
             
             DOMSource src = new DOMSource(parsedXML);
 
@@ -81,6 +81,9 @@ public class Project1 {
         } catch (Exception e) {
             e.printStackTrace();
         }  
+        
+        
+            
         
     }
     
