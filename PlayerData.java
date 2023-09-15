@@ -10,7 +10,11 @@ public class PlayerData {
     //TODO - finish adding fields for PlayerData
     private UUID guid;
     private boolean isActive;
-    //{Your code goes here}
+    private String firstName;
+    private String lastName;
+    private String email;
+    private int rank;
+    private int winRate;
     private LocalDateTime registered;
     private LocalDateTime lastPlayed;
     
@@ -20,7 +24,11 @@ public class PlayerData {
             LocalDateTime registered, LocalDateTime lastPlayed) {
         this.guid = guid;
         this.isActive = isActive;
-        //{Your code goes here}
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.rank = rank;
+        this.winRate = winRate;
         this.registered = registered;
         this.lastPlayed = lastPlayed;
     }
