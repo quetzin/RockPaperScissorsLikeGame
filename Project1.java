@@ -66,11 +66,11 @@ public class Project1 {
             playerList = populatePlayerList(nodeList);
             
             //TODO - Call constructPlayerFromInput() to create a PlayerData object from the input info.         
-            PlayerData x = constructPlayerFromInput(args);
+            PlayerData newPlayer = constructPlayerFromInput(args);
            
             
             //TODO - Call addToXML() to add the new player to the Result.xml document.
-            addToXML(x, parsedXML);
+            addToXML(newPlayer, parsedXML);
             
             DOMSource src = new DOMSource(parsedXML);
 
