@@ -33,9 +33,43 @@ public class PlayerData {
         this.lastPlayed = lastPlayed;
     }
 
+    public UUID getGuid() {
+        return guid;
+    }
+
+    public boolean getIsActive() {
+        return isActive;
+    }
+
     public String getFirstName() {
         return firstName;
     }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public int getRank() {
+        return rank;
+    }
+
+    public int getWinRate() {
+        return winRate;
+    }
+
+    public LocalDateTime getRegistered() {
+        return registered;
+    }
+
+    public LocalDateTime getLastPlayed() {
+        return lastPlayed;
+    }
+
+ 
     
     //TODO - Add a getter method for each field
     
