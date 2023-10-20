@@ -14,6 +14,6 @@ public abstract class BaseCharacter {
 		this.characterModel = characterModel;
 	}
 	
-	public abstract String getClassType();
+	public abstract String getClassType(); 
 
 }
