@@ -1,7 +1,4 @@
-/** 
- * Template Author: Kayla Wesley
- * TODO - Add group authors and their NetIDs.
- */
+
 package project2;
 
 import java.util.UUID;
@@ -31,40 +28,28 @@ import org.w3c.dom.Element;
  * Project 1: noSQL Game User Manager
  * 1. In this project you will manage a noSQL database.
  * 2. The data is stored in a XML file.
- * 
- * TODO 
- * 1. Replace all TODO sections with the correct data
- * 2. Set up the input parameters in Eclipse for testing.
- * 3. Finish the PlayerData class to manage the XML data.
- * 4. Add good comments for each TODO section you fill
- * 5. Add a ReadMe file with the data specified in Project1's requirements.
  */
 public class Project2 {
-    /**
-     * TODO - populate all TODOs in this method
-     * @param args
-     */
+   
     public static void main(String[] args) {
-        //TODO - the args should be populated with the field data for a new PlayerData object.
+        
         try {
-            //TODO - Finish the file path names
+
             File xmlFile = new File("src/project1/data.xml");
             File xsdFile = new File("src/project1/data.xsd");
             
-            //TODO - Create a ArrayList of PlayerData called "playerList"
             ArrayList<PlayerData> playerList = new ArrayList<PlayerData>();
             
             //XML parsing
             Document parsedXML = readXML(xmlFile, xsdFile);
             
-            //Accessing XML player data via nodeList
             Element root = parsedXML.getDocumentElement();
             NodeList nodeList = parsedXML.getElementsByTagName("Player");
             
             //Store player's data in playerList.
             playerList = populatePlayerList(nodeList);
             
-            //TODO - Call constructPlayerFromInput() to create a PlayerData object from the input info.         
+                   
             PlayerData newPlayer = constructPlayerFromInput(args);
            
             
@@ -87,11 +72,7 @@ public class Project2 {
         
     }
     
-    /**
-     * TODO - Populate all of the TODOs in this method
-     * @param nodeList
-     * @return
-     */
+  
     public static ArrayList<PlayerData> populatePlayerList(NodeList nodeList) {
         //TODO - create new PlayerData ArrayList
         ArrayList<PlayerData> playerList = new ArrayList<PlayerData>();
@@ -124,7 +105,7 @@ public class Project2 {
      */
     public static PlayerData constructPlayerFromElement(Element player) {
         
-        //TODO - Finish creating the field variables for the player
+        
         UUID guid = UUID.fromString(player.getElementsByTagName("guid").item(0).getTextContent());
         boolean isActive = Boolean.parseBoolean(player.getElementsByTagName("isActive").item(0).getTextContent());
         String firstName = String.valueOf(player.getElementsByTagName("firstName").item(0).getTextContent());
@@ -135,7 +116,7 @@ public class Project2 {
         LocalDateTime registered = LocalDateTime.parse(player.getElementsByTagName("registered").item(0).getTextContent());
         LocalDateTime lastPlayed = LocalDateTime.parse(player.getElementsByTagName("lastPlayed").item(0).getTextContent());
 
-        //TODO - Create a temporary PlayerData variable "newPlayer" to assign the Element data to.
+  
         PlayerData newPlayer = new PlayerData(guid, isActive, firstName, lastName, email, rank, winRate, registered, lastPlayed);
    
         
@@ -149,7 +130,7 @@ public class Project2 {
      */
     public static PlayerData constructPlayerFromInput(String[] input) {
         
-        //TODO - Finish creating the field variables for each player
+       
         UUID guid = UUID.fromString(input[0]);
         boolean isActive = Boolean.valueOf(input[1]);
         String firstName = String.valueOf(input[2]);
@@ -160,7 +141,7 @@ public class Project2 {
         LocalDateTime registered = LocalDateTime.parse(input[7]);
         LocalDateTime lastPlayed = LocalDateTime.parse(input[8]);
 
-        //TODO - Create a temporary PlayerData variable "newPlayer" to assign the input data to.
+        
         PlayerData newPlayer = new PlayerData(guid, isActive, firstName, lastName, email, rank, winRate, registered, lastPlayed);
         
         return newPlayer;
@@ -225,7 +206,7 @@ public class Project2 {
         DocumentBuilder builder = factory.newDocumentBuilder();
         Schema schema = null;
         
-        //Parsing xml document
+        
         Document parsedXML = builder.parse(xmlFile);
         parsedXML.getDocumentElement().normalize();
         
