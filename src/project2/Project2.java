@@ -2,9 +2,8 @@
  * Template Author: Kayla Wesley
  * TODO - Add group authors and their NetIDs.
  */
-package project1;
-// TODO - import the correct missing libraries
-import project1.PlayerData;
+package project2;
+
 import java.util.UUID;
 import java.util.ArrayList;
 import java.io.IOException;
@@ -40,7 +39,7 @@ import org.w3c.dom.Element;
  * 4. Add good comments for each TODO section you fill
  * 5. Add a ReadMe file with the data specified in Project1's requirements.
  */
-public class Project1 {
+public class Project2 {
     /**
      * TODO - populate all TODOs in this method
      * @param args

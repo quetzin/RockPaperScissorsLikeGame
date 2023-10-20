@@ -2,7 +2,8 @@
  * Template Author: Kayla Wesley
  * TODO - Add group authors and their NetIDs.
  */
-package project1;
+package project2;
+
 import java.util.UUID;
 import java.time.LocalDateTime;
 
