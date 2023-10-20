@@ -7,7 +7,7 @@ public abstract class BaseCharacter {
 	public String armorType;
 	
 	public Object getCharacterModel() {
-		return characterModel; 
+		return characterModel;
 	}
 
 	public void setCharacterModel(Object characterModel) {
