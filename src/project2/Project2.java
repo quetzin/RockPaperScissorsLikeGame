@@ -70,7 +70,7 @@ public class Project2 {
         	MagicCharacter mage = new MagicCharacter();
         	System.out.println("Mage hitpoints = " + mage.hitPoints);
         	System.out.println("Fireball hit! " + mage.getFireballScroll().calculateDamage(20));
-        	mage.getFireballScroll().graphicEffect();
+        	mage.getFireballScroll().graphicalEffect();
             
         
     }

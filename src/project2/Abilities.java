@@ -1,5 +1,9 @@
 package project2;
 
-public class Abilities {
-
+public interface Abilities {
+    static final int PERCENT = 100;
+    
+    int calculateDamage(int hit);
+    
+    void graphicalEffect();
 }
