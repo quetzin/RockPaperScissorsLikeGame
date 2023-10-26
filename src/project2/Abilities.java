@@ -6,4 +6,6 @@ public interface Abilities {
     int calculateDamage(int hit);
     
     void graphicalEffect();
+    
+    
 }
