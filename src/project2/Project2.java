@@ -8,31 +8,15 @@ package project2;
 
 import java.util.UUID;
 import java.util.ArrayList;
-// import java.io.IOException;
-// import java.io.File;
-
-// import java.io.File;
-//Do not modify these library
 import java.time.LocalDateTime;
-// import javax.xml.XMLConstants;
-// import javax.xml.parsers.*;
-// import javax.xml.transform.Transformer;
-// import javax.xml.transform.TransformerFactory;
-// import javax.xml.transform.dom.DOMSource;
-// import javax.xml.transform.stream.StreamResult;
-// import javax.xml.validation.Schema;
-// import javax.xml.validation.SchemaFactory;
-// import javax.xml.validation.Validator;
-// import org.w3c.dom.Document;  
 import org.w3c.dom.NodeList;
-// import org.xml.sax.SAXException;
 import org.w3c.dom.Node;  
 import org.w3c.dom.Element; 
 
 /**
- * Project 1: noSQL Game User Manager
- * 1. In this project you will manage a noSQL database.
- * 2. The data is stored in a XML file.
+ * Project 2: Game Character Inheritance
+ * 1. In this project we use inheritance to implement a character
+ *      and run operations on the specific character's abilities
  */
 public class Project2 {
    
@@ -40,9 +24,6 @@ public class Project2 {
         
         try {
             
-            // ArrayList<PlayerData> playerList = new ArrayList<PlayerData>();
-            
-            // PlayerData newPlayer = constructPlayerFromInput(args);
            
             
         } catch (Exception e) {
@@ -59,7 +40,6 @@ public class Project2 {
     
   
     public static ArrayList<PlayerData> populatePlayerList(NodeList nodeList) {
-        //TODO - create new PlayerData ArrayList
         ArrayList<PlayerData> playerList = new ArrayList<PlayerData>();
         
         //loop through the list of nodes
