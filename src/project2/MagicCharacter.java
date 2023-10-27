@@ -16,9 +16,14 @@ public class MagicCharacter extends BaseCharacter{
 	
 	public MagicCharacter() {
 		//FIXME
-		//hitPoints = 70;
-		//armorType = “light”;
-		//fireball = ;
+		hitPoints = 70;
+		armorType = "light";
 	}
+
+    @Override
+    public String getClassType() {
+        // TODO Auto-generated method stub
+        return "Magic";
+    }
 	
 }
