@@ -16,6 +16,8 @@ Braden
 Ibrahim
 
 Nicholas
+	Added Javadoc comments
+	Implemented methods for Abilities.java 
 
 Quetzin
 
