@@ -4,6 +4,13 @@ Ibrahim Qafisheh    nmq6
 Nicholas Rodriguez  dub7
 Quetzin Pimentel    q_p12 
 */
+
+/**
+ * The Abilities interface defines common functionality for character abilities.
+ * Implementing classes should provide methods for calculating damage and describing graphical effects.
+ * This interface is designed for character abilities in a role-playing game.
+ *
+ */
 package project2;
 
 public interface Abilities {
