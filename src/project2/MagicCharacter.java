@@ -9,15 +9,18 @@ package project2;
 public class MagicCharacter extends BaseCharacter{
     
     private FireballScroll fireball;
-    
+    /**
+     * 
+     * @return The type of the ability. 
+     */
     public FireballScroll getFireballScroll() {
         return fireball;
     }
     
     /**
-    * Construct a MagicCharacter object. Initializes the character with no
-    * name, 70 hit points, and a "light" alignment. It also creates a 
-    * FireballScroll for the character.
+    * Construct a MagicCharacter object. Initializes the character 
+    * with no name, 70 hit points, and a "light" alignment. Also creates
+    * a FireballScroll for the character.
     */
     public MagicCharacter() {
         super(null, 70, "light");
@@ -29,7 +32,7 @@ public class MagicCharacter extends BaseCharacter{
      *
      * @return The class type of the character.
      */
-     @Override
+    @Override
     public String getClassType() {
         return "Magic";
     }
