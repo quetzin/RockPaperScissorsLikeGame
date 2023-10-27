@@ -15,7 +15,10 @@ public interface Abilities {
     */
     int calculateDamage(int hit);       //Represents the percent of a 
                                         //  character’s hitPoints to take.
-    
+    /**
+     * Describes the graphical effects associated with the ability.
+     * This method should provide a visual representation of the ability's effect.
+     */
     void graphicalEffect();             //Represents the visuals associated 
                                         //  with an ability.
 }
