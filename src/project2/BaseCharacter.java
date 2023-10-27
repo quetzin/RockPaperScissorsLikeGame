@@ -12,6 +12,12 @@ public abstract class BaseCharacter {
 	public int hitPoints;
 	public String armorType;
 	
+	public BaseCharacter(Object characterModel, int hitPoints, String armorType) {
+	    this.characterModel = characterModel;
+	    this.hitPoints = hitPoints;
+	    this.armorType = armorType;
+	}
+	
 	public Object getCharacterModel() {
 		return characterModel;
 	}
