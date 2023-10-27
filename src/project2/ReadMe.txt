@@ -20,6 +20,10 @@ Nicholas
 	Implemented methods for Abilities.java 
 
 Quetzin
-
+	Implemented BaseCharacter getter and setter
+	Implemented BaseCharacter fied variables 
+	Implemented BaseCharacter constructor
+	Implemented abstract getClassType method in BaseCharacter
+	Removed unecessary imports and try catch blocks from project 1
 Release Notes: 
 	Existing Bugs
