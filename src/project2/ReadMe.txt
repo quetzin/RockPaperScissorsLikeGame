@@ -16,8 +16,8 @@ Braden
 Ibrahim
 
 Nicholas
-	Added Javadoc comments
-	Implemented methods for Abilities.java 
+	Added Javadoc comments to Abilities and MagicCharacter
+	Implemented methods for Abilities
 	Created PowerPoint Presentation 
 
 Quetzin
