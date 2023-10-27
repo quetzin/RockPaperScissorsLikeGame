@@ -40,33 +40,33 @@ public class Project2 {
         
         try {
 
-            File xmlFile = new File("src/project1/data.xml");
-            File xsdFile = new File("src/project1/data.xsd");
+           // File xmlFile = new File("src/project1/data.xml");
+           // File xsdFile = new File("src/project1/data.xsd");
             
             ArrayList<PlayerData> playerList = new ArrayList<PlayerData>();
             
             //XML parsing
-            Document parsedXML = readXML(xmlFile, xsdFile);
+           // Document parsedXML = readXML(xmlFile, xsdFile);
             
-            Element root = parsedXML.getDocumentElement();
-            NodeList nodeList = parsedXML.getElementsByTagName("Player");
+           // Element root = parsedXML.getDocumentElement();
+            // NodeList nodeList = parsedXML.getElementsByTagName("Player");
             
             //Store player's data in playerList.
-            playerList = populatePlayerList(nodeList);
+           // playerList = populatePlayerList(nodeList);
             
                    
             PlayerData newPlayer = constructPlayerFromInput(args);
            
             
             //TODO - Call addToXML() to add the new player to the Result.xml document.
-            addToXML(newPlayer, parsedXML);
+           // addToXML(newPlayer, parsedXML);
             
-            DOMSource src = new DOMSource(parsedXML);
+           // DOMSource src = new DOMSource(parsedXML);
 
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
             StreamResult result = new StreamResult("src/project1/Result.xml");
-            transformer.transform(src, result);
+          //  transformer.transform(src, result);
             
         } catch (Exception e) {
             e.printStackTrace();
@@ -160,6 +160,8 @@ public class Project2 {
      * @param player
      * @param parsedXML
      */
+    
+    /*
     public static void addToXML(PlayerData player, Document parsedXML) {
         Element root = parsedXML.getDocumentElement();
         Element newPlayer = parsedXML.createElement("Player");
@@ -197,6 +199,7 @@ public class Project2 {
         root.appendChild(newPlayer);
 
     }
+    */
     
     /**
      * Do not modify this method!
@@ -207,6 +210,8 @@ public class Project2 {
      * @throws SAXException
      * @throws IOException
      */
+    
+    /* 
     public static Document readXML(File xmlFile, File xsdFile) throws ParserConfigurationException, SAXException, IOException{
 
         //Setting up Factory and Builder
@@ -229,5 +234,6 @@ public class Project2 {
         
         return parsedXML;
     }
+    */
     
 }
