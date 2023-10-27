@@ -25,5 +25,6 @@ Quetzin
 	Implemented BaseCharacter constructor
 	Implemented abstract getClassType method in BaseCharacter
 	Removed unecessary imports and try catch blocks from project 1
+	
 Release Notes: 
 	Existing Bugs
