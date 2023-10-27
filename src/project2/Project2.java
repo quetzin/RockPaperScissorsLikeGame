@@ -8,24 +8,24 @@ package project2;
 
 import java.util.UUID;
 import java.util.ArrayList;
-import java.io.IOException;
-import java.io.File;
+// import java.io.IOException;
+// import java.io.File;
 
-import java.io.File;
+// import java.io.File;
 //Do not modify these library
 import java.time.LocalDateTime;
-import javax.xml.XMLConstants;
-import javax.xml.parsers.*;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
-import javax.xml.validation.Schema;
-import javax.xml.validation.SchemaFactory;
-import javax.xml.validation.Validator;
-import org.w3c.dom.Document;  
+// import javax.xml.XMLConstants;
+// import javax.xml.parsers.*;
+// import javax.xml.transform.Transformer;
+// import javax.xml.transform.TransformerFactory;
+// import javax.xml.transform.dom.DOMSource;
+// import javax.xml.transform.stream.StreamResult;
+// import javax.xml.validation.Schema;
+// import javax.xml.validation.SchemaFactory;
+// import javax.xml.validation.Validator;
+// import org.w3c.dom.Document;  
 import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
+// import org.xml.sax.SAXException;
 import org.w3c.dom.Node;  
 import org.w3c.dom.Element; 
 
@@ -40,9 +40,9 @@ public class Project2 {
         
         try {
             
-            ArrayList<PlayerData> playerList = new ArrayList<PlayerData>();
+            // ArrayList<PlayerData> playerList = new ArrayList<PlayerData>();
             
-            PlayerData newPlayer = constructPlayerFromInput(args);
+            // PlayerData newPlayer = constructPlayerFromInput(args);
            
             
         } catch (Exception e) {
