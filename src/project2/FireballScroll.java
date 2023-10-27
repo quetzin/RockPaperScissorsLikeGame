@@ -8,7 +8,8 @@ package project2;
 
 public class FireballScroll implements Abilities{
 	
-	
+	// calculateDamage function calculate the damage of the fireball
+	// and return the value
 	public int calculateDamage(int hit) {
 		return PERCENT - hit;
 	}
