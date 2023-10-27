@@ -18,6 +18,7 @@ Ibrahim
 Nicholas
 	Added Javadoc comments
 	Implemented methods for Abilities.java 
+	Created PowerPoint Presentation 
 
 Quetzin
 	Implemented BaseCharacter getter and setter
