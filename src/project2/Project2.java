@@ -22,7 +22,8 @@ import org.w3c.dom.Element;
 public class Project2 {
    
     public static void main(String[] args) {
-        
+        // try/catch statement that makes sure that all inputs have been provided
+       // and they are in the correct type
         try {
             
                MagicCharacter mage = new MagicCharacter();
@@ -73,8 +74,8 @@ public class Project2 {
     
     /**
      * 
-     * @param player
-     * @return
+     * @param player contains player data
+     * @return the data in its correct data type
      */
     public static PlayerData constructPlayerFromElement(Element player) {
         
@@ -98,8 +99,8 @@ public class Project2 {
     
     /**
      * TODO - Populate all of the TODOs in this method
-     * @param input
-     * @return
+     * @param input user input that contains player information
+     * @return the data of the player in a PlayerData element
      */
     public static PlayerData constructPlayerFromInput(String[] input) {
         
