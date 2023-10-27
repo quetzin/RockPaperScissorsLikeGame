@@ -15,6 +15,6 @@ public class FireballScroll implements Abilities{
 	
 
 	public void graphicalEffect() {
-		System.out.println("A large ball of flame hurtles toward the target.");
+		System.out.println("A large ball of flame hurtles toward thetarget.");
 	}
 }

@@ -21,6 +21,7 @@ public class MagicCharacter extends BaseCharacter{
 		fireball = new FireballScroll();
 	}
 
+	
     @Override
     public String getClassType() {
         return "Magic";
