@@ -41,7 +41,12 @@ public class Project2 {
         
     }
     
-  
+    /**
+     * Populates a list of PlayerData objects from a NodeList of XML data.
+     *
+     * @param nodeList A NodeList containing XML data representing player information.
+     * @return An ArrayList of PlayerData objects extracted from the XML data.
+     */
     public static ArrayList<PlayerData> populatePlayerList(NodeList nodeList) {
         ArrayList<PlayerData> playerList = new ArrayList<PlayerData>();
         
