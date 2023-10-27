@@ -22,8 +22,8 @@ import org.w3c.dom.Element;
 public class Project2 {
    
     public static void main(String[] args) {
-        // try/catch statement that makes sure that all inputs have been provided
-       // and they are in the correct type
+        // try/catch statement that makes sure that all inputs have been 
+        //provided and they are in the correct type
         try {
             
                MagicCharacter mage = new MagicCharacter();
@@ -45,8 +45,10 @@ public class Project2 {
     /**
      * Populates a list of PlayerData objects from a NodeList of XML data.
      *
-     * @param nodeList A NodeList containing XML data representing player information.
-     * @return An ArrayList of PlayerData objects extracted from the XML data.
+     * @param nodeList A NodeList containing XML data representing 
+     * player information.
+     * @return An ArrayList of PlayerData objects extracted from 
+     * the XML data.
      */
     public static ArrayList<PlayerData> populatePlayerList(NodeList nodeList) {
         ArrayList<PlayerData> playerList = new ArrayList<PlayerData>();

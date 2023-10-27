@@ -7,8 +7,9 @@
 
 /**
  * The PlayerData class represents data for a player in a gaming system.
- * It contains information about the player, including their unique ID, activity status, name,
- * email, rank, win rate, and registration and last played timestamps.
+ * It contains information about the player, including their unique ID, 
+ * activity status, name, email, rank, win rate, and registration and 
+ * last played timestamps.
  */
 package project2;
 
@@ -16,15 +17,17 @@ import java.util.UUID;
 import java.time.LocalDateTime;
 
 public class PlayerData {
-    private UUID guid;  // Unique identifier for the player.
-    private boolean isActive;   // Whether the player is active or not.
-    private String firstName;   // The player's first name.
-    private String lastName;    // The player's last name.
-    private String email;   // The player's email address.
-    private int rank;   // The player's rank.
-    private int winRate;    // The player's win rate.
-    private LocalDateTime registered;   // The date and time the player registered.
-    private LocalDateTime lastPlayed;   // The date and time the player last played.
+    private UUID guid;          //Unique identifier for the player.
+    private boolean isActive;   //Whether the player is active or not.
+    private String firstName;   //The player's first name.
+    private String lastName;    //The player's last name.
+    private String email;       //The player's email address.
+    private int rank;           //The player's rank.
+    private int winRate;        //The player's win rate.
+    private LocalDateTime registered;   //The date and time the player 
+                                            //registered.
+    private LocalDateTime lastPlayed;   //The date and time the player 
+                                            //last played.
     
     /**
      * Constructs a new PlayerData instance with the provided data.

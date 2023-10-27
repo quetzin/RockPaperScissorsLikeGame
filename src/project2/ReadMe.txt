@@ -18,6 +18,7 @@ Ibrahim
 Nicholas
 	Added Javadoc comments to Abilities and MagicCharacter
 	Implemented methods for Abilities
+	Grammar and readability edits 
 	Created PowerPoint Presentation 
 
 Quetzin

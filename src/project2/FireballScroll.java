@@ -1,7 +1,8 @@
 /**
- * The FireballScroll class provides the ability to calculate the damage percentage
- * caused by a fireball and display the graphical effects of the fireball when hitting the target.
- * This class implements the Abilities interface for character abilities.
+ * The FireballScroll class provides the ability to calculate the damage 
+ * percentage caused by a fireball and display the graphical effects of 
+ * the fireball when hitting the target. This class implements the 
+ * Abilities interface for character abilities.
  *
  * @author Braden Schlueter    plr61
  * @author Ibrahim Qafisheh    nmq6
@@ -26,7 +27,8 @@ public class FireballScroll implements Abilities{
 	}
 	
 	/**
-     * Displays the graphical effects associated with a fireball hitting the target.
+     * Displays the graphical effects associated with a fireball hitting 
+     * the target.
      */
 	public void graphicalEffect() {
 		System.out.println("A large ball of flame hurtles toward the target.");
