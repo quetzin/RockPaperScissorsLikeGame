@@ -27,9 +27,9 @@ public abstract class BaseCharacter {
      * @param armorType      The type of armor the character uses.
      */
 	public BaseCharacter(Object characterModel, int hitPoints, String armorType) {	
-	    this.characterModel = characterModel;	//Sets the character model.
-	    this.hitPoints = hitPoints;			//Sets the hitPoints.
-	    this.armorType = armorType;			//Sets the armorType.
+	    this.characterModel = characterModel;	 //Sets the character model.
+	    this.hitPoints = hitPoints;			     //Sets the hitPoints.
+	    this.armorType = armorType;			     //Sets the armorType.
 	}	
 	
 	/**
@@ -46,8 +46,8 @@ public abstract class BaseCharacter {
      *
      * @param characterModel The object representing the character model.
      */
-	public void setCharacterModel(Object characterModel) { //Setter for the 
-		this.characterModel = characterModel;                 //character model.
+	public void setCharacterModel(Object characterModel) {     //Setter for the 
+		this.characterModel = characterModel;                  //character model.
 	}
 	
 	/**
@@ -56,6 +56,6 @@ public abstract class BaseCharacter {
      * @return A string representing the class type.
      */
 	public abstract String getClassType(); 		//Abstract method to return
-	                                                //the class type.
+	                                            //the class type.
 
 }

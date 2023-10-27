@@ -14,6 +14,8 @@ Braden
 	Implemented getter for class type in MagicCharacter
 
 Ibrahim
+	Implemented try/catch statements in Project2.java
+	Implemented methods for FireballScroll.java
 
 Nicholas
 	Added Javadoc comments to Abilities and MagicCharacter
@@ -23,10 +25,10 @@ Nicholas
 
 Quetzin
 	Implemented BaseCharacter getter and setter
-	Implemented BaseCharacter fied variables 
+	Implemented BaseCharacter field variables 
 	Implemented BaseCharacter constructor
 	Implemented abstract getClassType method in BaseCharacter
-	Removed unecessary imports and try catch blocks from project 1
+	Removed unnecessary imports and try catch blocks from project 1
 	
 Release Notes: 
 	Existing Bugs
