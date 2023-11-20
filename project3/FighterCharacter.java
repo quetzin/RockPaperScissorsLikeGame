@@ -1,6 +1,8 @@
 package project3;
 
-public class FighterCharacter extends Object {
+import project2.BaseCharacter;
+
+public class FighterCharacter extends BaseCharacter {
     
     private ShieldDefense shield;
 
@@ -10,8 +12,12 @@ public class FighterCharacter extends Object {
     }
 
     public FighterCharacter() {
-        super(); // Call the constructor of the superclass Object
+        super(null, 150, "heavy");// Call the constructor of the superclass Object
         shield = new ShieldDefense();
+    }
+    @Override
+    public String getClassType() {
+        return "Fighter";
     }
 }
 
