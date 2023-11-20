@@ -2,13 +2,21 @@ package project3;
 
 public class BardCharacter extends BaseCharacter {
 
-    public int calculateDamage(int hit) {
-        return PERCENT - hit;
+    private LuteMusic lute;
+    
+    public BardCharacter() {
+        super(null, 100, "medium");
     }
     
-    
-    public void graphicalEffect() {
-        System.out.println("The lullaby makes the combatant sleepy.");
+    public LuteMusic getLuteMusic() {
+        return lute;
+    }
+
+
+    @Override
+    public String getClassType() {
+        // TODO Auto-generated method stub
+        return null;
     }
 
 }

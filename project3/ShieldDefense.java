@@ -17,5 +17,3 @@ public class ShieldDefense implements Abilities {
         }
     }
 }
-
-}

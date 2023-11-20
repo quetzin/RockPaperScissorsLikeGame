@@ -24,6 +24,8 @@ public class MagicCharacter extends BaseCharacter{
     */
     public MagicCharacter() {
         super(null, 70, "light");
+        // hitPoints = 70;
+        // armorType = "light";
         fireball = new FireballScroll();
     }
 
