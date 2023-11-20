@@ -12,9 +12,11 @@ public class FighterCharacter extends BaseCharacter {
     }
 
     public FighterCharacter() {
-        super(null, 150, "heavy");// Call the constructor of the superclass Object
+        super(null, 150, "heavy");
+        // Call the constructor of the superclass Object
         shield = new ShieldDefense();
     }
+
     @Override
     public String getClassType() {
         return "Fighter";
