@@ -1,16 +1,17 @@
 package project3;
 
-public class FighterCharacter {
-    private static final int PERCENT = 100;
+public class FighterCharacter extends Object {
+    
+    private ShieldDefense shield;
 
-    public int calculateDamage(int hit) {
-        return PERCENT - hit;
-
-        }
         
-        
-        public void graphicalEffect() {
-            System.out.println("The shield rebounds the attack.");
-        }
+    public ShieldDefense getFireballScroll() {
+        return shield;
     }
+
+    public FighterCharacter() {
+        super(); // Call the constructor of the superclass Object
+        shield = new ShieldDefense();
+    }
+}
 
