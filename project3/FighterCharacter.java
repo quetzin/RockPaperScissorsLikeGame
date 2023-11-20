@@ -8,7 +8,7 @@ public class FighterCharacter extends BaseCharacter {
     private ShieldDefense shield;
 
         
-    public ShieldDefense getFireballScroll() {
+    public ShieldDefense getShieldDefense() {
         return shield;
     }
 
