@@ -19,7 +19,7 @@ import org.w3c.dom.Element;
  * 1. In this project we use inheritance to implement a character
  *      and run operations on the specific character's abilities
  */
-public class Project2 {
+public class Project3 {
    
     public static void main(String[] args) {
         // try/catch statement that makes sure that all inputs have been 
