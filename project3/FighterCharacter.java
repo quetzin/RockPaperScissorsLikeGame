@@ -1,14 +1,21 @@
 package project3;
 
-public class FighterCharacter {
+public class FighterCharacter extends BaseCharacter{
 
-    public int calculateDamage(int hit) {
-        return PERCENT - hit;
+    private ShieldDefense defense;
+    
+    public FighterCharacter() {
+        super(null, 150, "heavy");
     }
     
-    
-    public void graphicalEffect() {
-        System.out.println("The lullaby makes the combatant sleepy.");
+    public ShieldDefense getShieldDefense() {
+        return defense;
+    }
+
+
+    public String getClassType() {
+        // TODO Auto-generated method stub
+        return null;
     }
 
 }
