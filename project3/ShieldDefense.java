@@ -11,9 +11,9 @@ public class ShieldDefense implements Abilities {
         System.out.println("The shield rebounds the attack.");
     }
 
-    public void loseBattle() {
+    public void failureGraphic() {
         if (hitPoints <= 0) {
-            System.out.println("You have lost the battle.");
+            System.out.println("Shield is dropped as the fighter falls asleep.");
         }
     }
 }
