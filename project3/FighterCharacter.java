@@ -8,6 +8,8 @@ public class FighterCharacter extends BaseCharacter {
     
     private ShieldDefense shield;
 
+    
+    // Known bugs with this, in main its using 100 hp instead of 150 hp. If you run the file you should see it in the output
 
     public FighterCharacter() {
         //super(null, 150, "heavy");
