@@ -11,8 +11,14 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.time.LocalDateTime;
 import org.w3c.dom.NodeList;
+
+import tutorial1.MyFrame;
+
 import org.w3c.dom.Node;  
 import org.w3c.dom.Element; 
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
 
 /**
  * Project 2: Game Character Inheritance
@@ -123,5 +129,8 @@ public class Project3 {
         return newPlayer;
     }
     
+    //Creates an instance of the GraphicalUserInterface fireball button:
+    GraphicalUserInterface FireballButton = new GraphicalUserInterface();
+
     
 }
