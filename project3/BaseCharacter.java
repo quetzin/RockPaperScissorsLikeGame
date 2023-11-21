@@ -26,11 +26,12 @@ public abstract class BaseCharacter {
      * @param hitPoints      The hit points of the character.
      * @param armorType      The type of armor the character uses.
      */
-	public BaseCharacter(Object characterModel, int hitPoints, String armorType) {	
+	/* public BaseCharacter(Object characterModel, int hitPoints, String armorType) {	
 	    this.characterModel = characterModel;	 //Sets the character model.
 	    this.hitPoints = hitPoints;			     //Sets the hitPoints.
 	    this.armorType = armorType;			     //Sets the armorType.
-	}	
+	}
+	*/	
 	
 	/**
      * Gets the character model associated with the character.

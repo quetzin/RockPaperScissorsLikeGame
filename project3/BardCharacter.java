@@ -5,7 +5,10 @@ public class BardCharacter extends BaseCharacter {
     private LuteMusic lute;
     
     public BardCharacter() {
-        super(null, 100, "medium");
+       // super(null, 100, "medium");
+        hitPoints = 100;
+        armorType = "medium";
+        lute = new LuteMusic();
     }
     
     public LuteMusic getLuteMusic() {
@@ -15,8 +18,7 @@ public class BardCharacter extends BaseCharacter {
 
     @Override
     public String getClassType() {
-        // TODO Auto-generated method stub
-        return null;
+        return "Bard";
     }
 
 }

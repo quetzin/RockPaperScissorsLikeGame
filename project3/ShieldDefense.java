@@ -2,7 +2,8 @@ package project3;
 
 public class ShieldDefense implements Abilities {
     private int hitPoints;
-
+    private int PERCENT = 150;
+    
     public int calculateDamage(int hit) {
         return PERCENT - hit;
     }

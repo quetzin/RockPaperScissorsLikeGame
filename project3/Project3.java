@@ -32,12 +32,26 @@ public class Project3 {
         //provided and they are in the correct type
         try {
             
-               MagicCharacter mage = new MagicCharacter();
+            MagicCharacter mage = new MagicCharacter();
         	System.out.println("Mage hitpoints = " + mage.hitPoints);
         	System.out.println("Fireball hit! " + mage.getFireballScroll().calculateDamage(20));
         	mage.getFireballScroll().graphicalEffect();
+        	System.out.println();
 
+        	
+        	// Testing for fighter character - Remove later -Braden
+        	FighterCharacter rocky = new FighterCharacter();
+        	System.out.println("Rocky hitpoints = " + rocky.hitPoints);
+        	System.out.println("Shield testing! " + rocky.getShieldDefense().calculateDamage(70));
+        	rocky.getShieldDefense().graphicalEffect();
+        	System.out.println();
             
+        	// Testing for Bard character - Remove later -Braden
+        	BardCharacter bard = new BardCharacter();
+        	System.out.println("Bard htipoints = " + bard.hitPoints);
+        	System.out.println("Lute testing! " + bard.getLuteMusic().calculateDamage(40));
+        	bard.getLuteMusic().graphicalEffect();
+        	
         } catch (InputMismatchException e) {
             System.out.println("Incorrect input type");
         }  
