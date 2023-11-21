@@ -27,4 +27,7 @@ public interface Abilities {
      */
     void graphicalEffect();             //Represents the visuals associated 
                                         //  with an ability.
+    
+    void failureGraphic();              //Represents the visuals associated 
+                                        //  with the loss of a battle
 }

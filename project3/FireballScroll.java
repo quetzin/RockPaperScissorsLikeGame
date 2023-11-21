@@ -33,4 +33,8 @@ public class FireballScroll implements Abilities{
 	public void graphicalEffect() {
 		System.out.println("A large ball of flame hurtles toward the target.");
 	}
+	
+	public void failureGraphic() {
+	    System.out.println("Fireball rebounds into the mage’s scroll!");
+	}
 }

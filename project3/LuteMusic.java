@@ -10,5 +10,9 @@ public class LuteMusic implements Abilities{
     public void graphicalEffect() {
         System.out.println("The lullaby makes the combatant sleepy.");
     }
+    
+    public void failureGraphic() {
+        System.out.println( "Lute is engulfed in flames");
+    }
 
 }
