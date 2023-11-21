@@ -26,11 +26,12 @@ public class Project3 {
         //provided and they are in the correct type
         try {
             
-               MagicCharacter mage = new MagicCharacter();
+            MagicCharacter mage = new MagicCharacter();
         	System.out.println("Mage hitpoints = " + mage.hitPoints);
         	System.out.println("Fireball hit! " + mage.getFireballScroll().calculateDamage(20));
         	mage.getFireballScroll().graphicalEffect();
 
+        
             
         } catch (InputMismatchException e) {
             System.out.println("Incorrect input type");

@@ -14,8 +14,10 @@ public class FighterCharacter extends BaseCharacter {
     }
 
     public FighterCharacter() {
-        super(null, 150, "heavy");
+        //super(null, 150, "heavy");
         // Call the constructor of the superclass Object
+        hitPoints = 150;
+        armorType = "heavy";
         shield = new ShieldDefense();
     }
     
