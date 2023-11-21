@@ -12,7 +12,7 @@ import java.util.InputMismatchException;
 import java.time.LocalDateTime;
 import org.w3c.dom.NodeList;
 
-import tutorial1.MyFrame;
+import project3.GraphicalUserInterface;
 
 import org.w3c.dom.Node;  
 import org.w3c.dom.Element; 
