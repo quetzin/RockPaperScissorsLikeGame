@@ -31,7 +31,12 @@ public class Project3 {
         	System.out.println("Fireball hit! " + mage.getFireballScroll().calculateDamage(20));
         	mage.getFireballScroll().graphicalEffect();
 
-        
+        	
+        	// Testing for fighter character - Remove later -Braden
+        	FighterCharacter rocky = new FighterCharacter();
+        	System.out.println("Rocky hitpoints = " + rocky.hitPoints);
+        	System.out.println("Shield testing! " + rocky.getShieldDefense().calculateDamage(70));
+        	rocky.getShieldDefense().graphicalEffect();
             
         } catch (InputMismatchException e) {
             System.out.println("Incorrect input type");

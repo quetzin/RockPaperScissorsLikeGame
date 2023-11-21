@@ -8,10 +8,6 @@ public class FighterCharacter extends BaseCharacter {
     
     private ShieldDefense shield;
 
-        
-    public ShieldDefense getShieldDefense() {
-        return shield;
-    }
 
     public FighterCharacter() {
         //super(null, 150, "heavy");
@@ -19,6 +15,10 @@ public class FighterCharacter extends BaseCharacter {
         hitPoints = 150;
         armorType = "heavy";
         shield = new ShieldDefense();
+    }
+    
+    public ShieldDefense getShieldDefense() {
+        return shield;
     }
     
     @Override
