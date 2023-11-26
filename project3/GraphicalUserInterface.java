@@ -1,9 +1,13 @@
-/*
+package project3;
+
+import javax.swing.*;
 import javax.swing.JFrame;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+
 import javax.swing.JButton;
 
 
@@ -13,7 +17,13 @@ public class GraphicalUserInterface extends JFrame implements ActionListener{
     JButton button;
     
     GraphicalUserInterface (){
-                
+        
+        
+        
+        
+        /*
+    }
+        
         button = new JButton();
         button.setBounds(100, 100, 250, 100);
         button.addActionListener(this);
@@ -40,6 +50,13 @@ public class GraphicalUserInterface extends JFrame implements ActionListener{
         }
         
     }
+    */
 
 }
-*/
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        // TODO Auto-generated method stub
+        
+    }
+}

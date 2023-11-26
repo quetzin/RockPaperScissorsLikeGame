@@ -20,6 +20,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 
 
+
 /**
  * Project 2: Game Character Inheritance
  * 1. In this project we use inheritance to implement a character
@@ -51,6 +52,12 @@ public class Project3 {
         	System.out.println("Bard htipoints = " + bard.hitPoints);
         	System.out.println("Lute testing! " + bard.getLuteMusic().calculateDamage(40));
         	bard.getLuteMusic().graphicalEffect();
+     
+        	// Gui is opening and title is correct
+        	JFrame frame = new GraphicalUserInterface();
+        	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        	frame.setTitle("Fireball | Shield | Lute");
+        	frame.setVisible(true);
         	
         } catch (InputMismatchException e) {
             System.out.println("Incorrect input type");
