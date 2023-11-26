@@ -34,6 +34,10 @@ public class FireballScroll implements Abilities{
 		System.out.println("A large ball of flame hurtles toward the target.");
 	}
 	
+	/**
+	 * Displays a graphic representation of a failure when a fireball spell rebounds into the mage's scroll.
+	 * This method prints a message to the console indicating the failure scenario.
+	 */
 	public void failureGraphic() {
 	    System.out.println("Fireball rebounds into the mage’s scroll!");
 	}

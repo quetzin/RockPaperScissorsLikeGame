@@ -56,6 +56,7 @@ public class PlayerData {
         this.registered = registered;
         this.lastPlayed = lastPlayed;
     }
+    
     /**
      * Get the unique identifier for the player.
      *
@@ -64,6 +65,7 @@ public class PlayerData {
     public UUID getGUID() {
         return guid;
     }
+    
     /**
      * Check if the player is active.
      *
@@ -72,6 +74,7 @@ public class PlayerData {
     public boolean getIsActive() {
         return isActive;
     }
+    
     /**
      * Get the first name of the player.
      *
@@ -80,6 +83,7 @@ public class PlayerData {
     public String getFirstName() {
         return firstName;
     }
+    
     /**
      * Get the last name of the player.
      *
@@ -88,6 +92,7 @@ public class PlayerData {
     public String getLastName() {
         return lastName;
     }
+    
     /**
      * Get the email address of the player.
      *
@@ -96,6 +101,7 @@ public class PlayerData {
     public String getEmail() {
         return email;
     }
+    
     /**
      * Get the rank of the player in the gaming system.
      *
@@ -104,6 +110,7 @@ public class PlayerData {
     public int getRank() {
         return rank;
     }
+    
     /**
      * Get the win rate of the player as a percentage.
      *
@@ -112,6 +119,7 @@ public class PlayerData {
     public int getWinRate() {
         return winRate;
     }
+    
     /**
      * Get the timestamp when the player registered.
      *
@@ -120,6 +128,7 @@ public class PlayerData {
     public LocalDateTime getRegistered() {
         return registered;
     }
+    
     /**
      * Get the timestamp of the player's last activity.
      *
