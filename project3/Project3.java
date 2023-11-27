@@ -18,6 +18,8 @@ import org.w3c.dom.Node;
 import org.w3c.dom.Element; 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JSplitPane;
 
 
 
@@ -55,9 +57,34 @@ public class Project3 {
      
         	// Gui is opening and title is correct
         	JFrame frame = new GraphicalUserInterface();
-        	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        	frame.setTitle("Fireball | Shield | Lute");
-        	frame.setVisible(true);
+        	JSplitPane sp = new JSplitPane();
+        	frame.add(sp);
+   
+        	
+        	
+        	sp.setDividerLocation(300);
+
+        	
+        	JButton fireball = new JButton("Fireball");
+            JButton lute = new JButton("Lute");
+            JButton shield = new JButton("Shield");
+    
+        	
+        	JPanel lp = new JPanel(null);
+        	JPanel rp = new JPanel(null);
+        	
+        	lp.add(fireball);
+        	lp.add(shield);
+        	lp.add(lute);
+        	
+        	sp.setLeftComponent(lp);
+        	sp.setRightComponent(rp);
+        	
+        	frame.setSize(600, 600);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setTitle("Fireball | Shield | Lute");
+            frame.setVisible(true);
+        	
         	
         } catch (InputMismatchException e) {
             System.out.println("Incorrect input type");
