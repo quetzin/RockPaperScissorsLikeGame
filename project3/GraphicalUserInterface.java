@@ -18,27 +18,27 @@ public class GraphicalUserInterface implements ActionListener{
     JPanel lp,rp;
     
     public GraphicalUserInterface() {
-        JFrame frame = new JFrame("Split pane ");
+        JFrame frame = new JFrame("Fireball | Shield | Lute");
         JSplitPane sp = new JSplitPane();
         frame.add(sp);
-        sp.setDividerLocation(200);
+        sp.setDividerLocation(300);
 
         lp = new JPanel(null);
         rp = new JPanel(null);
         
-        luteBtn = new JButton("Yellow"); //Text for button
+        luteBtn = new JButton("Lute"); //Text for button
         fireballBtn = new JButton("Fireball");
         shieldBtn = new JButton("Shield");
 //----------------------------------------------------
-        luteBtn.setBounds(100, 50, 70, 40); // Set the bounds for the yellow button
+        luteBtn.setBounds(95, 20, 90, 40); // Set the bounds for the yellow button
         luteBtn.setBackground(Color.yellow); // Set the background color of the button to yellow
         luteBtn.addActionListener(this); // Add an action listener to the yellow button
 
-        fireballBtn.setBounds(100, 100, 70, 40);
+        fireballBtn.setBounds(95, 70, 90, 40);
         fireballBtn.setBackground(Color.red);
         fireballBtn.addActionListener(this);
         
-        shieldBtn.setBounds(100, 150, 70, 40);
+        shieldBtn.setBounds(95, 120, 90, 40);
         shieldBtn.setBackground(Color.blue);
         shieldBtn.addActionListener(this);
  //---------------------------------------------------   
@@ -48,7 +48,7 @@ public class GraphicalUserInterface implements ActionListener{
  //---------------------------------------------------      
         sp.setLeftComponent(lp);
         sp.setRightComponent(rp);
-        frame.setSize(400, 400);
+        frame.setSize(600, 400);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);     
     }
@@ -56,13 +56,13 @@ public class GraphicalUserInterface implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == luteBtn) {
-            lp.setBackground(Color.yellow);
+            rp.setBackground(Color.yellow);
         }
         if(e.getSource() == fireballBtn) {
-            lp.setBackground(Color.red);
+            rp.setBackground(Color.red);
         }
         if(e.getSource() == shieldBtn) {
-            lp.setBackground(Color.blue);
+            rp.setBackground(Color.blue);
         }
     }
 
