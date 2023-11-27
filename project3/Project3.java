@@ -33,11 +33,6 @@ import javax.swing.JSplitPane;
  *      and run operations on the specific character's abilities
  */
 public class Project3 extends GraphicalUserInterface{
-//        
-//<<<<<<< HEAD
-//=======
-    
-//>>>>>>> f4dd648de216c7f1e22169c039f8de02a9d60f19
 
     public static void main(String[] args) {
         new GraphicalUserInterface(); //Calls new gui 
