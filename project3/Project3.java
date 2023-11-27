@@ -38,7 +38,7 @@ public class Project3 implements ActionListener {
     JPanel lp,rp;
     
     public Project3() {
-        JFrame frame = new JFrame("Split pane ");
+        JFrame frame = new JFrame("Fireball | Shield | Lute");
         JSplitPane sp = new JSplitPane();
         frame.add(sp);
         sp.setDividerLocation(200);
@@ -46,7 +46,7 @@ public class Project3 implements ActionListener {
         lp = new JPanel(null);
         rp = new JPanel(null);
         
-        luteBtn = new JButton("Yellow"); //Text for button
+        luteBtn = new JButton("Lute"); //Text for button
         fireballBtn = new JButton("Fireball");
         shieldBtn = new JButton("Shield");
 //----------------------------------------------------
