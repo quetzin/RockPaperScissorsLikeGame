@@ -14,18 +14,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.time.LocalDateTime;
 import org.w3c.dom.NodeList;
-
-
 import project3.GraphicalUserInterface;
-
 import org.w3c.dom.Node;  
 import org.w3c.dom.Element; 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JSplitPane;
-
-
 
 /**
  * Project 2: Game Character Inheritance
@@ -42,39 +37,31 @@ public class Project3 extends GraphicalUserInterface{
         try {
             
             MagicCharacter mage = new MagicCharacter();
-        	System.out.println("Mage hitpoints = " + mage.hitPoints);
-        	System.out.println("Fireball hit! " + mage.getFireballScroll().calculateDamage(20));
-        	mage.getFireballScroll().graphicalEffect();
-        	System.out.println();
-
-        	
-        	// Testing for fighter character - Remove later -Braden
-        	FighterCharacter rocky = new FighterCharacter();
-        	System.out.println("Rocky hitpoints = " + rocky.hitPoints);
-        	System.out.println("Shield testing! " + rocky.getShieldDefense().calculateDamage(70));
-        	rocky.getShieldDefense().graphicalEffect();
-        	System.out.println();
+            System.out.println("Mage hitpoints = " + mage.hitPoints);
+            System.out.println("Fireball hit! " + mage.getFireballScroll().calculateDamage(20));
+            mage.getFireballScroll().graphicalEffect();
+            System.out.println();
             
-        	// Testing for Bard character - Remove later -Braden
-        	BardCharacter bard = new BardCharacter();
-        	System.out.println("Bard htipoints = " + bard.hitPoints);
-        	System.out.println("Lute testing! " + bard.getLuteMusic().calculateDamage(40));
-        	bard.getLuteMusic().graphicalEffect();
-     
-        	
-   
-        	
-        	
-        	
-        	
+            // Testing for fighter character - Remove later -Braden
+            FighterCharacter rocky = new FighterCharacter();
+            System.out.println("Rocky hitpoints = " + rocky.hitPoints);
+            System.out.println("Shield testing! " + rocky.getShieldDefense().calculateDamage(70));
+            rocky.getShieldDefense().graphicalEffect();
+            System.out.println();
+            
+            // Testing for Bard character - Remove later -Braden
+            BardCharacter bard = new BardCharacter();
+            System.out.println("Bard htipoints = " + bard.hitPoints);
+            System.out.println("Lute testing! " + bard.getLuteMusic().calculateDamage(40));
+            bard.getLuteMusic().graphicalEffect();
+        
+            
         } catch (InputMismatchException e) {
             System.out.println("Incorrect input type");
         }  
         catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Not all inputs have been provided");
-        }
-            
-        
+        }       
     }
     
     /**
