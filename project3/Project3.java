@@ -32,8 +32,12 @@ import javax.swing.JSplitPane;
  * 1. In this project we use inheritance to implement a character
  *      and run operations on the specific character's abilities
  */
-public class Project3 extends GraphicalUserInterface implements ActionListener {
-        
+public class Project3 extends GraphicalUserInterface{
+//        
+//<<<<<<< HEAD
+//=======
+    
+//>>>>>>> f4dd648de216c7f1e22169c039f8de02a9d60f19
 
     public static void main(String[] args) {
         new GraphicalUserInterface(); //Calls new gui 
@@ -158,15 +162,4 @@ public class Project3 extends GraphicalUserInterface implements ActionListener {
         
         return newPlayer;
     }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
-        
-    }
-    
-//    Creates an instance of the GraphicalUserInterface fireball button:
-//    GraphicalUserInterface FireballButton = new GraphicalUserInterface();
-
-    
 }
