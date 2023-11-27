@@ -32,69 +32,14 @@ import javax.swing.JSplitPane;
  * 1. In this project we use inheritance to implement a character
  *      and run operations on the specific character's abilities
  */
-public class Project3 implements ActionListener {
+public class Project3 extends GraphicalUserInterface implements ActionListener {
         
-    JButton luteBtn, fireballBtn, shieldBtn;
-    JPanel lp,rp;
-    
-    public Project3() {
-        JFrame frame = new JFrame("Split pane ");
-        JSplitPane sp = new JSplitPane();
-        frame.add(sp);
-        sp.setDividerLocation(200);
-
-        lp = new JPanel(null);
-        rp = new JPanel(null);
-        
-        luteBtn = new JButton("Yellow"); //Text for button
-        fireballBtn = new JButton("Fireball");
-        shieldBtn = new JButton("Shield");
-//----------------------------------------------------
-        luteBtn.setBounds(100, 50, 70, 40); // Set the bounds for the yellow button
-        luteBtn.setBackground(Color.yellow); // Set the background color of the button to yellow
-        luteBtn.addActionListener(this); // Add an action listener to the yellow button
-
-        fireballBtn.setBounds(100, 100, 70, 40);
-        fireballBtn.setBackground(Color.red);
-        fireballBtn.addActionListener(this);
-        
-        shieldBtn.setBounds(100, 150, 70, 40);
-        shieldBtn.setBackground(Color.blue);
-        shieldBtn.addActionListener(this);
- //---------------------------------------------------   
-        rp.add(luteBtn); //Puts button on right side
-        rp.add(fireballBtn);
-        rp.add(shieldBtn);
- //---------------------------------------------------      
-        sp.setLeftComponent(lp);
-        sp.setRightComponent(rp);
-        frame.setSize(400, 400);
-        frame.setVisible(true);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    }
-
-    public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == luteBtn) {
-            lp.setBackground(Color.yellow);
-        }
-        if(e.getSource() == fireballBtn) {
-            lp.setBackground(Color.red);
-        }
-        if(e.getSource() == shieldBtn) {
-            lp.setBackground(Color.blue);
-        }
-    }
 
     public static void main(String[] args) {
-        new Project3();
+        new GraphicalUserInterface(); //Calls new gui 
     
-        
-        
         // try/catch statement that makes sure that all inputs have been 
         //provided and they are in the correct type
-            
-        new Project3();
-            
         try {
             
             MagicCharacter mage = new MagicCharacter();
@@ -117,15 +62,9 @@ public class Project3 implements ActionListener {
         	System.out.println("Lute testing! " + bard.getLuteMusic().calculateDamage(40));
         	bard.getLuteMusic().graphicalEffect();
      
-        	// Gui is opening and title is correct
-        	JFrame frame = new GraphicalUserInterface();
-        	JSplitPane sp = new JSplitPane();
-        	frame.add(sp);
+        	
    
         	
-        	
-        	sp.setDividerLocation(300);
-
         	
         	
         	
@@ -218,6 +157,12 @@ public class Project3 implements ActionListener {
         PlayerData newPlayer = new PlayerData(guid, isActive, firstName, lastName, email, rank, winRate, registered, lastPlayed);
         
         return newPlayer;
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        // TODO Auto-generated method stub
+        
     }
     
 //    Creates an instance of the GraphicalUserInterface fireball button:

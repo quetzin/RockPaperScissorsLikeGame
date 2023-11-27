@@ -1,29 +1,73 @@
 package project3;
 
-import javax.swing.*;
-import javax.swing.JFrame;
 import java.awt.Color;
-import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-
 import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JSplitPane;
 
 
-public class GraphicalUserInterface extends JFrame implements ActionListener{
+public class GraphicalUserInterface implements ActionListener{
     
     //Code to add a fireball button. Work in progress:
-    JButton button;
     
-    GraphicalUserInterface (){
+            
+    JButton luteBtn, fireballBtn, shieldBtn;
+    JPanel lp,rp;
+    
+    public GraphicalUserInterface() {
+        JFrame frame = new JFrame("Split pane ");
+        JSplitPane sp = new JSplitPane();
+        frame.add(sp);
+        sp.setDividerLocation(200);
+
+        lp = new JPanel(null);
+        rp = new JPanel(null);
         
+        luteBtn = new JButton("Yellow"); //Text for button
+        fireballBtn = new JButton("Fireball");
+        shieldBtn = new JButton("Shield");
+//----------------------------------------------------
+        luteBtn.setBounds(100, 50, 70, 40); // Set the bounds for the yellow button
+        luteBtn.setBackground(Color.yellow); // Set the background color of the button to yellow
+        luteBtn.addActionListener(this); // Add an action listener to the yellow button
+
+        fireballBtn.setBounds(100, 100, 70, 40);
+        fireballBtn.setBackground(Color.red);
+        fireballBtn.addActionListener(this);
         
-        
-        
-        /*
+        shieldBtn.setBounds(100, 150, 70, 40);
+        shieldBtn.setBackground(Color.blue);
+        shieldBtn.addActionListener(this);
+ //---------------------------------------------------   
+        rp.add(luteBtn); //Puts button on right side
+        rp.add(fireballBtn);
+        rp.add(shieldBtn);
+ //---------------------------------------------------      
+        sp.setLeftComponent(lp);
+        sp.setRightComponent(rp);
+        frame.setSize(400, 400);
+        frame.setVisible(true);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);     
     }
-        
+    
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if(e.getSource() == luteBtn) {
+            lp.setBackground(Color.yellow);
+        }
+        if(e.getSource() == fireballBtn) {
+            lp.setBackground(Color.red);
+        }
+        if(e.getSource() == shieldBtn) {
+            lp.setBackground(Color.blue);
+        }
+    }
+
+    
+       /* 
         button = new JButton();
         button.setBounds(100, 100, 250, 100);
         button.addActionListener(this);
@@ -52,5 +96,4 @@ public class GraphicalUserInterface extends JFrame implements ActionListener{
     }
     */
 
-}
 }
