@@ -8,7 +8,7 @@
  * @author Quetzin Pimentel (q_p12)
  */
 
-package project3;
+//package project3;
 
 public class ShieldDefense implements Abilities {
     private int hitPoints;
@@ -27,16 +27,17 @@ public class ShieldDefense implements Abilities {
      * @param hit the hit value.
      * @return the calculated damage reduction.
      */
-    public void graphicalEffect() {
-        System.out.println("The shield rebounds the attack.");
+    public String graphicalEffect() {
+        return "The shield rebounds the attack.";
     }
     
     /**
      * Displays a graphical effect when the shield successfully rebounds an attack.
      */
-    public void failureGraphic() {
-        if (hitPoints <= 0) {
-            System.out.println("Shield is dropped as the fighter falls asleep.");
-        }
+    public String failureGraphic() {
+        //if (hitPoints <= 0) {
+            //return "Shield is dropped as the fighter falls asleep.";
+       // }
+    	return "Shield is dropped as the fighter falls asleep.";
     }
 }

@@ -11,6 +11,7 @@
  * activity status, name, email, rank, win rate, and registration and 
  * last played timestamps.
  */
+
 package project3;
 
 import java.util.UUID;

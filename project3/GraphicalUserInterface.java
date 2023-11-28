@@ -27,8 +27,9 @@ public class GraphicalUserInterface extends JFrame implements ActionListener{
     private ArrayList<PlayerData> playerDataList;
     
     //----------------------------------------------------
-    public GraphicalUserInterface(ArrayList<PlayerData> playerDataList) {           //Constructor for GUI
-        this.setPlayerDataList(playerDataList);
+    public GraphicalUserInterface(ArrayList<PlayerData> playerDataList) {
+        super("Fireball | Shield | Lute");
+        this.playerDataList = playerDataList;
         JFrame frame = new JFrame("Fireball | Shield | Lute");
         JSplitPane sp = new JSplitPane();
         frame.add(sp);
@@ -37,7 +38,7 @@ public class GraphicalUserInterface extends JFrame implements ActionListener{
         lp = new JPanel(null);
         rp = new JPanel(null);
         
-     // Create oDefaultListModel and populate it with PlayerData
+     // Create DefaultListModel and populate it with PlayerData
         DefaultListModel<PlayerData> listModel = new DefaultListModel<>();
         for (PlayerData playerData : playerDataList) {
             listModel.addElement(playerData);
