@@ -47,8 +47,8 @@ public class Project3 extends GraphicalUserInterface{
       //TODO - the args should be populated with the field data for a new PlayerData object.
         try {
             //TODO - Finish the file path names
-            File xmlFile = new File("src/project1/data.xml");
-            File xsdFile = new File("src/project1/data.xsd");
+            File xmlFile = new File("/CS3354_Group4/project3/data.xml");
+            File xsdFile = new File("/CS3354_Group4/project3/data.xsd");
             
             //TODO - Create a ArrayList of PlayerData called "playerList"
             ArrayList<PlayerData> playerList = new ArrayList<PlayerData>();
@@ -65,7 +65,7 @@ public class Project3 extends GraphicalUserInterface{
             
             //TODO - Call constructPlayerFromInput() to create a PlayerData object from the input info.         
             PlayerData newPlayer = constructPlayerFromInput(args);
-           
+          
             
             //TODO - Call addToXML() to add the new player to the Result.xml document.
             addToXML(newPlayer, parsedXML);
