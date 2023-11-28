@@ -47,9 +47,11 @@ public class Project3{
        // gui.setVisible(true);
 
         try {
+            System.out.println("Current Working Directory: " + System.getProperty("user.dir"));
 
-            File xmlFile = new File("/CS3354_Group4/project3/data.xml");
-            File xsdFile = new File("/CS3354_Group4/project3/data.xsd");
+
+            File xmlFile = new File("/Users/bradenschlueter/projects/CS3354_Group4/project3/players.xml");
+            File xsdFile = new File("/Users/bradenschlueter/projects/CS3354_Group4/project3/players.xsd");
             
             if (!xmlFile.exists()) {
                 throw new FileNotFoundException("XML file not found at the location specified");
@@ -58,7 +60,7 @@ public class Project3{
             if (!xsdFile.exists()) {
                 throw new FileNotFoundException("XSD file not found at the location specified");
             }
-
+           
             ArrayList<PlayerData> playerList = new ArrayList<PlayerData>();
             
             //XML parsing
@@ -82,7 +84,7 @@ public class Project3{
 
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
-            StreamResult result = new StreamResult("src/project1/Result.xml");
+            StreamResult result = new StreamResult("CS3354_Group4/project3/Result.xml");
             transformer.transform(src, result);
             
             GraphicalUserInterface gui = new GraphicalUserInterface(playerList);
@@ -91,7 +93,6 @@ public class Project3{
         } catch (Exception e) {
             e.printStackTrace();
         }  
-//----------------------------------------------------------------------------
         
             
          
