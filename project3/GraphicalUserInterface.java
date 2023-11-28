@@ -11,9 +11,7 @@ import javax.swing.JSplitPane;
 
 public class GraphicalUserInterface implements ActionListener{
     
-    //Code to add a fireball button. Work in progress:
-    
-            
+          
     JButton luteBtn, fireballBtn, shieldBtn;
     JPanel lp,rp;
 //----------------------------------------------------

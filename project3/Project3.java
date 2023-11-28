@@ -6,21 +6,33 @@
  */
 package project3;
 
+import project1.PlayerData;
+
+import javax.xml.XMLConstants;
+import javax.xml.parsers.*;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import javax.xml.validation.Schema;
+import javax.xml.validation.SchemaFactory;
+import javax.xml.validation.Validator;
+import org.w3c.dom.Document;  
+import org.xml.sax.SAXException;
+import org.w3c.dom.Node;  
+import org.w3c.dom.Element; 
+
 import java.util.UUID;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
-import java.awt.Color;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 import java.time.LocalDateTime;
 import org.w3c.dom.NodeList;
-import project3.GraphicalUserInterface;
-import org.w3c.dom.Node;  
-import org.w3c.dom.Element; 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JSplitPane;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+//----------------------------------------------------------------------------
 
 /**
  * Project 2: Game Character Inheritance
@@ -30,6 +42,46 @@ import javax.swing.JSplitPane;
 public class Project3 extends GraphicalUserInterface{
 
     public static void main(String[] args) {
+        
+      //Code from project1 main():
+      //TODO - the args should be populated with the field data for a new PlayerData object.
+        try {
+            //TODO - Finish the file path names
+            File xmlFile = new File("src/project1/data.xml");
+            File xsdFile = new File("src/project1/data.xsd");
+            
+            //TODO - Create a ArrayList of PlayerData called "playerList"
+            ArrayList<PlayerData> playerList = new ArrayList<PlayerData>();
+            
+            //XML parsing
+            Document parsedXML = readXML(xmlFile, xsdFile);
+            
+            //Accessing XML player data via nodeList
+            Element root = parsedXML.getDocumentElement();
+            NodeList nodeList = parsedXML.getElementsByTagName("Player");
+            
+            //Store player's data in playerList.
+            playerList = populatePlayerList(nodeList);
+            
+            //TODO - Call constructPlayerFromInput() to create a PlayerData object from the input info.         
+            PlayerData newPlayer = constructPlayerFromInput(args);
+           
+            
+            //TODO - Call addToXML() to add the new player to the Result.xml document.
+            addToXML(newPlayer, parsedXML);
+            
+            DOMSource src = new DOMSource(parsedXML);
+
+            TransformerFactory transformerFactory = TransformerFactory.newInstance();
+            Transformer transformer = transformerFactory.newTransformer();
+            StreamResult result = new StreamResult("src/project1/Result.xml");
+            transformer.transform(src, result);
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }  
+//----------------------------------------------------------------------------
+        
         new GraphicalUserInterface(); //Calls new gui 
     
         // try/catch statement that makes sure that all inputs have been 
@@ -63,7 +115,7 @@ public class Project3 extends GraphicalUserInterface{
             System.out.println("Not all inputs have been provided");
         }       
     }
-    
+//----------------------------------------------------------------------------
     /**
      * Populates a list of PlayerData objects from a NodeList of XML data.
      *
@@ -96,8 +148,8 @@ public class Project3 extends GraphicalUserInterface{
         return playerList;
     }
     
+//----------------------------------------------------------------------------
     /**
-     * 
      * @param player contains player data
      * @return the data in its correct data type
      */
@@ -120,7 +172,7 @@ public class Project3 extends GraphicalUserInterface{
         
         return newPlayer;
     }
-    
+//----------------------------------------------------------------------------
     /**
      * TODO - Populate all of the TODOs in this method
      * @param input user input that contains player information
@@ -143,5 +195,82 @@ public class Project3 extends GraphicalUserInterface{
         PlayerData newPlayer = new PlayerData(guid, isActive, firstName, lastName, email, rank, winRate, registered, lastPlayed);
         
         return newPlayer;
+    }
+//----------------------------------------------------------------------------
+    /**
+     * readXML():
+     * Do not modify this method!
+     * @param xmlFile
+     * @param xsdFile
+     * @return
+     * @throws ParserConfigurationException
+     * @throws SAXException
+     * @throws IOException
+     */
+    public static Document readXML(File xmlFile, File xsdFile) throws ParserConfigurationException, SAXException, IOException{
+
+        //Setting up Factory and Builder
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder builder = factory.newDocumentBuilder();
+        Schema schema = null;
+        
+        //Parsing xml document
+        Document parsedXML = builder.parse(xmlFile);
+        parsedXML.getDocumentElement().normalize();
+        
+        //Setting up schema
+        String lang = XMLConstants.W3C_XML_SCHEMA_NS_URI;
+        SchemaFactory schemaFactory = SchemaFactory.newInstance(lang);
+        schema = schemaFactory.newSchema(xsdFile);
+        
+        //Validating schema
+        Validator validator = schema.newValidator();
+        validator.validate(new DOMSource(parsedXML));
+        
+        return parsedXML;
+    }
+//----------------------------------------------------------------------------
+    /**
+     * addToXML():
+     * Do not change this method!
+     * @param player
+     * @param parsedXML
+     */
+    public static void addToXML(PlayerData player, Document parsedXML) {
+        Element root = parsedXML.getDocumentElement();
+        Element newPlayer = parsedXML.createElement("Player");
+        
+        Element guid = parsedXML.createElement("guid");
+        guid.appendChild(parsedXML.createTextNode(player.getGUID().toString()));
+        Element isActive = parsedXML.createElement("isActive");
+        isActive.appendChild(parsedXML.createTextNode(player.getIsActive() == true ? "true" : "false"));
+        Element firstName = parsedXML.createElement("firstName");
+        firstName.appendChild(parsedXML.createTextNode(player.getFirstName().toString()));
+        Element lastName = parsedXML.createElement("lastName");
+        lastName.appendChild(parsedXML.createTextNode(player.getLastName().toString()));
+        Element email = parsedXML.createElement("email");
+        email.appendChild(parsedXML.createTextNode(player.getEmail().toString()));
+        Element rank = parsedXML.createElement("rank");
+        rank.appendChild(parsedXML.createTextNode("" + player.getRank()));
+        Element winRate = parsedXML.createElement("winRate");
+        winRate.appendChild(parsedXML.createTextNode("" + player.getWinRate()));
+        Element registered = parsedXML.createElement("registered");
+        registered.appendChild(parsedXML.createTextNode(player.getRegistered().toString()));
+        Element lastPlayed = parsedXML.createElement("LastPlayed");
+        lastPlayed.appendChild(parsedXML.createTextNode(player.getLastPlayed().toString()));
+        
+        newPlayer.appendChild(guid);
+        newPlayer.appendChild(isActive);
+        newPlayer.appendChild(firstName);
+        newPlayer.appendChild(lastName);
+        newPlayer.appendChild(email);
+        newPlayer.appendChild(rank);
+        newPlayer.appendChild(winRate);
+        newPlayer.appendChild(registered);
+        newPlayer.appendChild(lastPlayed);
+        
+        //Do not change this.
+        root.appendChild(newPlayer);
+
     }
 }
