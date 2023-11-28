@@ -49,9 +49,9 @@ public class Project3{
         try {
             System.out.println("Current Working Directory: " + System.getProperty("user.dir"));
 
-
-            File xmlFile = new File("/Users/bradenschlueter/projects/CS3354_Group4/project3/players.xml");
-            File xsdFile = new File("/Users/bradenschlueter/projects/CS3354_Group4/project3/players.xsd");
+            // Need to fix, its not accepting relative file path
+            File xmlFile = new File("/Users/bradenschlueter/projects/CS3354/CS3354_Group4/project3/players.xml");
+            File xsdFile = new File("/Users/bradenschlueter/projects/CS3354/CS3354_Group4/project3/players.xsd");
             
             if (!xmlFile.exists()) {
                 throw new FileNotFoundException("XML file not found at the location specified");
