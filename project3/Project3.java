@@ -6,7 +6,7 @@
  */
 package project3;
 
-import project1.PlayerData;
+
 
 import javax.xml.XMLConstants;
 import javax.xml.parsers.*;
@@ -39,7 +39,7 @@ import javax.xml.parsers.ParserConfigurationException;
  * 1. In this project we use inheritance to implement a character
  *      and run operations on the specific character's abilities
  */
-public class Project3 extends GraphicalUserInterface{
+public class Project3{
 
     public static void main(String[] args) {
         

@@ -28,7 +28,7 @@ public class GraphicalUserInterface extends JFrame implements ActionListener{
     
     //----------------------------------------------------
     public GraphicalUserInterface(ArrayList<PlayerData> playerDataList) {           //Constructor for GUI
-        this.setPlayerDataList(playerDataList);
+        this.playerDataList = playerDataList;
         JFrame frame = new JFrame("Fireball | Shield | Lute");
         JSplitPane sp = new JSplitPane();
         frame.add(sp);
