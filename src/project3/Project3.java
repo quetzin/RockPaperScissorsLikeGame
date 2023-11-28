@@ -88,7 +88,7 @@ public class Project3{
             transformer.transform(src, result);
             
             GraphicalUserInterface gui = new GraphicalUserInterface(playerList);
-            gui.setVisible(true);
+            // gui.setVisible(true);
             
         } catch (Exception e) {
             e.printStackTrace();

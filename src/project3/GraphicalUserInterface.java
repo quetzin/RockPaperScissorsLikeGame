@@ -24,7 +24,7 @@ public class GraphicalUserInterface extends JFrame implements ActionListener{
     private static final long serialVersionUID = 1L;
     JButton luteBtn, fireballBtn, shieldBtn;
     JPanel lp,rp;
-    JList<PlayerData> playerList;
+    JList<String> playerList; //Should pass a String instead
     JLabel playerNameLabel, winRateLabel;
     private ArrayList<PlayerData> playerDataList;
     
@@ -36,18 +36,21 @@ public class GraphicalUserInterface extends JFrame implements ActionListener{
         frame.add(sp);
         sp.setDividerLocation(300);
 
-        lp = new JPanel(null);
+        lp = new JPanel(new BorderLayout());
         rp = new JPanel(null);
         
      // Create oDefaultListModel and populate it with PlayerData
-        DefaultListModel<PlayerData> listModel = new DefaultListModel<>();
+        DefaultListModel<String> listModel = new DefaultListModel<>();
         for (PlayerData playerData : playerDataList) {
-            listModel.addElement(playerData);
+            if (playerData.getIsActive()) {
+                listModel.addElement(playerData.getFirstName());
+            }
         }
         
         playerList = new JList<>(listModel);
         playerList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        
+        lp.add(new JScrollPane(playerList), BorderLayout.CENTER);
+        add(lp, BorderLayout.WEST);
         
         luteBtn = new JButton("Lute"); //Text for button
         fireballBtn = new JButton("Fireball");
@@ -65,7 +68,7 @@ public class GraphicalUserInterface extends JFrame implements ActionListener{
         shieldBtn.setBackground(Color.blue);
         shieldBtn.addActionListener(this);
  //---------------------------------------------------   
-        lp.add(playerList);
+        
         
         rp.add(luteBtn); //Puts button on right side
         rp.add(fireballBtn);
