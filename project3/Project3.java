@@ -77,12 +77,15 @@ public class Project3 extends GraphicalUserInterface{
             StreamResult result = new StreamResult("src/project1/Result.xml");
             transformer.transform(src, result);
             
+            GraphicalUserInterface gui = new GraphicalUserInterface(playerList);
+            
         } catch (Exception e) {
             e.printStackTrace();
         }  
 //----------------------------------------------------------------------------
         
-     //   GraphicalUserInterface gui = new GraphicalUserInterface(playerList); //Calls new gui 
+            //Calls new gui 
+            
     
         // try/catch statement that makes sure that all inputs have been 
         //provided and they are in the correct type
