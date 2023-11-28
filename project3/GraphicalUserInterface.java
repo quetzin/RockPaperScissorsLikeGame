@@ -8,20 +8,27 @@ import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JSplitPane;
+import javax.swing.ListSelectionModel;
 
 
 
-public class GraphicalUserInterface implements ActionListener{
+public class GraphicalUserInterface extends JFrame implements ActionListener{
     
           
+    private static final long serialVersionUID = 1L;
     JButton luteBtn, fireballBtn, shieldBtn;
     JPanel lp,rp;
     JList<PlayerData> playerList;
-//----------------------------------------------------
+    JLabel playerNameLabel, winRateLabel;
+    private ArrayList<PlayerData> playerDataList;
+    
+    //----------------------------------------------------
     public GraphicalUserInterface(ArrayList<PlayerData> playerDataList) {           //Constructor for GUI
+        this.setPlayerDataList(playerDataList);
         JFrame frame = new JFrame("Fireball | Shield | Lute");
         JSplitPane sp = new JSplitPane();
         frame.add(sp);
@@ -30,13 +37,15 @@ public class GraphicalUserInterface implements ActionListener{
         lp = new JPanel(null);
         rp = new JPanel(null);
         
-     // Create DefaultListModel and populate it with PlayerData
+     // Create oDefaultListModel and populate it with PlayerData
         DefaultListModel<PlayerData> listModel = new DefaultListModel<>();
         for (PlayerData playerData : playerDataList) {
             listModel.addElement(playerData);
         }
         
         playerList = new JList<>(listModel);
+        playerList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        
         
         luteBtn = new JButton("Lute"); //Text for button
         fireballBtn = new JButton("Fireball");
@@ -78,6 +87,14 @@ public class GraphicalUserInterface implements ActionListener{
         if(e.getSource() == shieldBtn) {
             rp.setBackground(Color.blue);
         }
+    }
+
+    public ArrayList<PlayerData> getPlayerDataList() {
+        return playerDataList;
+    }
+
+    public void setPlayerDataList(ArrayList<PlayerData> playerDataList) {
+        this.playerDataList = playerDataList;
     }
 
 }

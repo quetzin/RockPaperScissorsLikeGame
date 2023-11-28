@@ -78,13 +78,13 @@ public class Project3 extends GraphicalUserInterface{
             transformer.transform(src, result);
             
             GraphicalUserInterface gui = new GraphicalUserInterface(playerList);
+            gui.setVisible(true);
             
         } catch (Exception e) {
             e.printStackTrace();
         }  
 //----------------------------------------------------------------------------
         
-            //Calls new gui 
             
     
         // try/catch statement that makes sure that all inputs have been 
