@@ -82,7 +82,7 @@ public class Project3 extends GraphicalUserInterface{
         }  
 //----------------------------------------------------------------------------
         
-        GraphicalUserInterface gui = new GraphicalUserInterface(); //Calls new gui 
+     //   GraphicalUserInterface gui = new GraphicalUserInterface(playerList); //Calls new gui 
     
         // try/catch statement that makes sure that all inputs have been 
         //provided and they are in the correct type

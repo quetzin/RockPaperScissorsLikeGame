@@ -3,10 +3,15 @@ package project3;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JSplitPane;
+
 
 
 public class GraphicalUserInterface implements ActionListener{
@@ -14,8 +19,9 @@ public class GraphicalUserInterface implements ActionListener{
           
     JButton luteBtn, fireballBtn, shieldBtn;
     JPanel lp,rp;
+    JList<PlayerData> playerList;
 //----------------------------------------------------
-    public GraphicalUserInterface() {           //Constructor for GUI
+    public GraphicalUserInterface(ArrayList<PlayerData> playerDataList) {           //Constructor for GUI
         JFrame frame = new JFrame("Fireball | Shield | Lute");
         JSplitPane sp = new JSplitPane();
         frame.add(sp);
@@ -23,6 +29,14 @@ public class GraphicalUserInterface implements ActionListener{
 
         lp = new JPanel(null);
         rp = new JPanel(null);
+        
+     // Create DefaultListModel and populate it with PlayerData
+        DefaultListModel<PlayerData> listModel = new DefaultListModel<>();
+        for (PlayerData playerData : playerDataList) {
+            listModel.addElement(playerData);
+        }
+        
+        playerList = new JList<>(listModel);
         
         luteBtn = new JButton("Lute"); //Text for button
         fireballBtn = new JButton("Fireball");
@@ -43,7 +57,9 @@ public class GraphicalUserInterface implements ActionListener{
         rp.add(luteBtn); //Puts button on right side
         rp.add(fireballBtn);
         rp.add(shieldBtn);
- //---------------------------------------------------      
+ //---------------------------------------------------    
+        
+        
         sp.setLeftComponent(lp);
         sp.setRightComponent(rp);
         frame.setSize(600, 400);
