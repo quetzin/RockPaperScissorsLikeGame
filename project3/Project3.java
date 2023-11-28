@@ -84,7 +84,7 @@ public class Project3{
 
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
-            StreamResult result = new StreamResult("CS3354_Group4/project3/Result.xml");
+            StreamResult result = new StreamResult("/Users/bradenschlueter/projects/CS3354/CS3354_Group4/project3/Result.xml");
             transformer.transform(src, result);
             
             GraphicalUserInterface gui = new GraphicalUserInterface(playerList);
