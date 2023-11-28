@@ -24,6 +24,7 @@ import org.w3c.dom.Element;
 import java.util.UUID;
 import java.util.ArrayList;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import org.w3c.dom.NodeList;
@@ -50,6 +51,13 @@ public class Project3{
             File xmlFile = new File("/CS3354_Group4/project3/data.xml");
             File xsdFile = new File("/CS3354_Group4/project3/data.xsd");
             
+            if (!xmlFile.exists()) {
+                throw new FileNotFoundException("XML file not found at the location specified");
+            }
+            
+            if (!xsdFile.exists()) {
+                throw new FileNotFoundException("XSD file not found at the location specified");
+            }
 
             ArrayList<PlayerData> playerList = new ArrayList<PlayerData>();
             
