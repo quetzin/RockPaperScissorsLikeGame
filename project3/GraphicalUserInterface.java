@@ -1,5 +1,6 @@
 package project3;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,6 +12,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import javax.swing.ListSelectionModel;
 
@@ -63,6 +65,8 @@ public class GraphicalUserInterface extends JFrame implements ActionListener{
         shieldBtn.setBackground(Color.blue);
         shieldBtn.addActionListener(this);
  //---------------------------------------------------   
+        lp.add(playerList);
+        
         rp.add(luteBtn); //Puts button on right side
         rp.add(fireballBtn);
         rp.add(shieldBtn);
