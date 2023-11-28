@@ -43,7 +43,7 @@ public class GraphicalUserInterface extends JFrame implements ActionListener{
         DefaultListModel<String> listModel = new DefaultListModel<>();
         for (PlayerData playerData : playerDataList) {
             if (playerData.getIsActive()) {
-                listModel.addElement(playerData.getFirstName());
+                listModel.addElement(playerData.getFirstName() + " " + playerData.getLastName());
             }
         }
         
