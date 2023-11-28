@@ -8,7 +8,6 @@ package project3;
 
 
 import javax.xml.XMLConstants;
-import javax.xml.parsers.*;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
@@ -87,7 +86,7 @@ public class Project3{
             
     
         // try/catch statement that makes sure that all inputs have been 
-        //provided and they are in the correct type
+  /*      //provided and they are in the correct type
         try {
             
             MagicCharacter mage = new MagicCharacter();
@@ -115,7 +114,8 @@ public class Project3{
         }  
         catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Not all inputs have been provided");
-        }       
+        }  
+        */     
     }
 //----------------------------------------------------------------------------
     /**

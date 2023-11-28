@@ -8,10 +8,10 @@
  * @author Quetzin Pimentel (q_p12)
  */
 
-//package project3;
+package project3;
 
 public class ShieldDefense implements Abilities {
-    private int hitPoints;
+    //private int hitPoints;
     private int PERCENT = 150;
     
     /**
