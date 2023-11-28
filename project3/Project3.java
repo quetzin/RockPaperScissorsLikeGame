@@ -9,7 +9,6 @@ package project3;
 
 
 import javax.xml.XMLConstants;
-import javax.xml.parsers.*;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
@@ -24,7 +23,6 @@ import org.w3c.dom.Element;
 
 import java.util.UUID;
 import java.util.ArrayList;
-import java.util.InputMismatchException;
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -43,14 +41,16 @@ public class Project3{
 
     public static void main(String[] args) {
         
-      //Code from project1 main():
-      //TODO - the args should be populated with the field data for a new PlayerData object.
+       // ArrayList<PlayerData> playerList = new ArrayList<PlayerData>();
+       // GraphicalUserInterface gui = new GraphicalUserInterface(playerList);
+       // gui.setVisible(true);
+
         try {
-            //TODO - Finish the file path names
+
             File xmlFile = new File("/CS3354_Group4/project3/data.xml");
             File xsdFile = new File("/CS3354_Group4/project3/data.xsd");
             
-            //TODO - Create a ArrayList of PlayerData called "playerList"
+
             ArrayList<PlayerData> playerList = new ArrayList<PlayerData>();
             
             //XML parsing
@@ -86,37 +86,7 @@ public class Project3{
 //----------------------------------------------------------------------------
         
             
-    
-        // try/catch statement that makes sure that all inputs have been 
-        //provided and they are in the correct type
-        try {
-            
-            MagicCharacter mage = new MagicCharacter();
-            System.out.println("Mage hitpoints = " + mage.hitPoints);
-            System.out.println("Fireball hit! " + mage.getFireballScroll().calculateDamage(20));
-            mage.getFireballScroll().graphicalEffect();
-            System.out.println();
-            
-            // Testing for fighter character - Remove later -Braden
-            FighterCharacter rocky = new FighterCharacter();
-            System.out.println("Rocky hitpoints = " + rocky.hitPoints);
-            System.out.println("Shield testing! " + rocky.getShieldDefense().calculateDamage(70));
-            rocky.getShieldDefense().graphicalEffect();
-            System.out.println();
-            
-            // Testing for Bard character - Remove later -Braden
-            BardCharacter bard = new BardCharacter();
-            System.out.println("Bard htipoints = " + bard.hitPoints);
-            System.out.println("Lute testing! " + bard.getLuteMusic().calculateDamage(40));
-            bard.getLuteMusic().graphicalEffect();
-        
-            
-        } catch (InputMismatchException e) {
-            System.out.println("Incorrect input type");
-        }  
-        catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("Not all inputs have been provided");
-        }       
+         
     }
 //----------------------------------------------------------------------------
     /**
