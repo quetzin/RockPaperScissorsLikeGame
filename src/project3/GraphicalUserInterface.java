@@ -109,16 +109,16 @@ public class GraphicalUserInterface extends JFrame implements ActionListener {
         shieldBtn.setVisible(false);
 //----------------------------------------------------
         // Creating buttons for different actions
-        luteBtn.setBounds(95, 20, 90, 40); // Set the bounds for the yellow button
+        luteBtn.setBounds(190, 20, 90, 40); // Set the bounds for the yellow button
         luteBtn.setBackground(Color.yellow); // Set the background color of the button to yellow
         luteBtn.addActionListener(this); // Add an action listener to the yellow button
 
-        fireballBtn.setBounds(95, 70, 90, 40);
+        fireballBtn.setBounds(190, 70, 90, 40);
         fireballBtn.setBackground(Color.red);
         fireballBtn.addActionListener(this);
         
         // Handling button click events
-        shieldBtn.setBounds(95, 120, 90, 40);
+        shieldBtn.setBounds(190, 120, 90, 40);
         shieldBtn.setBackground(Color.blue);
         shieldBtn.addActionListener(this);
  //---------------------------------------------------   
@@ -130,8 +130,8 @@ public class GraphicalUserInterface extends JFrame implements ActionListener {
         rp.add(shieldBtn);
  //---------------------------------------------------    
         
-        
-        resultLabel.setBounds(95, 170, 200, 40);
+        // Have to set a long width so the text does not get cut off
+        resultLabel.setBounds(95, 170, 400, 40);
         rp.add(resultLabel);
         
         
