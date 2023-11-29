@@ -32,12 +32,15 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 //----------------------------------------------------------------------------
-
 /**
- * Project 2: Game Character Inheritance
- * 1. In this project we use inheritance to implement a character
- *      and run operations on the specific character's abilities
+ * The Project3 class serves as the main class for a project involving XML data manipulation and a graphical user interface (GUI) for player interactions. It includes methods for parsing XML files, populating a list of PlayerData objects, constructing PlayerData objects from XML elements and user input, and updating an XML file with new player information.
+ *
+ * The class contains the main method that orchestrates the entire process. It reads an existing XML file, validates it against an XML schema, populates a list of player data, constructs a new PlayerData object from user input, adds the new player to the XML document, and finally updates the XML file.
+ *
+ * The GUI is initiated using the GraphicalUserInterface class, allowing users to interact with the player data visually.
+ *
  */
+
 public class Project3{
 
     public static void main(String[] args) {
