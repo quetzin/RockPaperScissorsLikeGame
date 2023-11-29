@@ -60,6 +60,10 @@ public class GraphicalUserInterface extends JFrame implements ActionListener{
             if (selectedPlayer != null) {
                 PlayerData selected = getPlayerByName(playerDataList, selectedPlayer);
                 if (selected != null) {
+                // These two statements are to debug to make sure its selecitng a player
+                System.out.println("Selected player name: " + selected.getFirstName());
+                System.out.println("Selected player win rate: " + selected.getWinRate() + "%");
+                
                 playerNameLabel.setText(selected.getFirstName());
                 winRateLabel.setText("Win Rate: " + selected.getWinRate() + "%");
                 }
@@ -84,7 +88,16 @@ public class GraphicalUserInterface extends JFrame implements ActionListener{
         // Add the left pane to the left side of the split
         add(lp, BorderLayout.WEST);
         
-      
+        playerList.addListSelectionListener(element -> {
+            String selectedPlayer = playerList.getSelectedValue();
+            if (selectedPlayer != null) {
+                PlayerData selected = getPlayerByName(playerDataList, selectedPlayer);
+                if (selected != null) {
+                playerNameLabel.setText(selected.getFirstName());
+                winRateLabel.setText("Win Rate: " + selected.getWinRate() + "%");
+                }
+            }
+        });
         
 
         
