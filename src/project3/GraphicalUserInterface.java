@@ -70,9 +70,9 @@ public class GraphicalUserInterface extends JFrame implements ActionListener {
         playerList.addListSelectionListener(e -> {
             
             String selectedPlayer = playerList.getSelectedValue();
-                luteBtn.setVisible(false);
-                fireballBtn.setVisible(false);
-                shieldBtn.setVisible(false);
+                luteBtn.setVisible(true);
+                fireballBtn.setVisible(true);
+                shieldBtn.setVisible(true);
                 if (selectedPlayer != null) {
                 PlayerData selected = getPlayerByName(playerDataList, selectedPlayer);
                 if (selected != null) {
@@ -88,6 +88,9 @@ public class GraphicalUserInterface extends JFrame implements ActionListener {
         luteBtn = new JButton("Lute"); //Text for button
         fireballBtn = new JButton("Fireball");
         shieldBtn = new JButton("Shield");
+        luteBtn.setVisible(false);
+        fireballBtn.setVisible(false);
+        shieldBtn.setVisible(false);
 //----------------------------------------------------
         // Creating buttons for different actions
         luteBtn.setBounds(95, 20, 90, 40); // Set the bounds for the yellow button
