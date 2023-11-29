@@ -15,7 +15,7 @@ public class BardCharacter extends BaseCharacter {
     private LuteMusic lute;
     
     /**
-     * Constructs a new {@code BardCharacter} with default hit points, armor type, and a lute.
+     * Constructs a new BardCharacter with default hit points, armor type, and a lute.
      */
     public BardCharacter() {
         hitPoints = 100;

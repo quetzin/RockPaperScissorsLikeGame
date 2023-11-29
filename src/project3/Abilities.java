@@ -18,17 +18,23 @@ public interface Abilities {
     * @return The damage calculated as a percentage of the character's 
     * hit points.
     */
-    int calculateDamage(int hit);       //Represents the percent of a 
-                                        //  character’s hitPoints to take.
+    int calculateDamage(int hit);       
+                                        
     /**
      * Describes the graphical effects associated with the ability.
      * This method should provide a visual representation of the 
      * ability's effect.
      * @return 
      */
-    String graphicalEffect();             //Represents the visuals associated 
-                                        //  with an ability.
+    String graphicalEffect();             
+                                        
+    /**
+     * Describes the graphical effects associated with the failure or loss of a battle.
+     * This method should provide a visual representation of the failure.
+     * 
+     * @return A string describing the graphical effects of failure.
+     */
+    String failureGraphic();     
     
-    String failureGraphic();              //Represents the visuals associated 
-                                        //  with the loss of a battle
 }
+
