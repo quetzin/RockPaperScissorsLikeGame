@@ -29,7 +29,7 @@ public class GraphicalUserInterface extends JFrame implements ActionListener {
     
     private FireballScroll fireballScroll;
     private LuteMusic luteMusic;
-    private ShieldDefense aaa;
+    private ShieldDefense shieldDefense;
     
     JLabel resultLabel = new JLabel();
     
@@ -51,7 +51,7 @@ public class GraphicalUserInterface extends JFrame implements ActionListener {
         
         fireballScroll = new FireballScroll();
         luteMusic = new LuteMusic();
-        aaa = new ShieldDefense();
+        shieldDefense = new ShieldDefense();
 
         // Creating JList and setting selection mode
         playerList = new JList<>(listModel);
@@ -176,9 +176,9 @@ public class GraphicalUserInterface extends JFrame implements ActionListener {
     private void playShieldDefense(PlayerData playerDataList) {
         int opponentClass = getRandomOpponent();
         if (opponentClass == 1) {
-             aaa.failureGraphic();
+             shieldDefense.failureGraphic();
         } else if (opponentClass == 2) {
-             aaa.graphicalEffect();
+             shieldDefense.graphicalEffect();
         } else {
              System.out.println("It's a draw.");
         }
