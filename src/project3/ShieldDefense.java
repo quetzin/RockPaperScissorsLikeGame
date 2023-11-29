@@ -27,14 +27,15 @@ public class ShieldDefense implements Abilities {
      * @param hit the hit value.
      * @return the calculated damage reduction.
      */
-    public void graphicalEffect() {
-        System.out.println("The shield rebounds the attack.");
+    public String graphicalEffect() {
+        return "The shield rebounds the attack.";
     }
     
     /**
      * Displays a graphical effect when the shield successfully rebounds an attack.
+     * @return 
      */
-    public void failureGraphic() {
-        System.out.println("Shield is dropped as the fighter falls asleep.");
+    public String failureGraphic() {
+        return "Shield is dropped as the fighter falls asleep.";
     }
 }

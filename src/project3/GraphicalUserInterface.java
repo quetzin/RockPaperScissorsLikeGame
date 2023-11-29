@@ -136,22 +136,22 @@ public class GraphicalUserInterface extends JFrame implements ActionListener {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);     
     }
     
-    // ActionListener implementation for button clicks
     @Override
     public void actionPerformed(ActionEvent e) {
         if (playerList.getSelectedValue() != null) {
             PlayerData selected = getPlayerByName(playerDataList, playerList.getSelectedValue());
+            String result = null;
             if (e.getSource() == fireballBtn) {
                 // perform action for fireball btn
-                playFireball(selected);
+                result = playFireball(selected);
             } else if (e.getSource() == shieldBtn) {
-                playShieldDefense(selected);
+                result = playShieldDefense(selected);
             } else if (e.getSource() == luteBtn) {
-                playLuteMusic(selected);
+                result = playLuteMusic(selected);
             }
+            resultLabel.setText(result);
         }
     }
-
     // Helper method to get player by name
     private PlayerData getPlayerByName(ArrayList<PlayerData> playerDataList, String name) {
         for (PlayerData player : playerDataList) {
@@ -162,43 +162,38 @@ public class GraphicalUserInterface extends JFrame implements ActionListener {
         return null;
     }
     
-    private void playFireball(PlayerData playerDataList) {
+    private String playFireball(PlayerData playerDataList) {
         int opponentClass = getRandomOpponent(); // Implement this method to get a random opponent class
         if (opponentClass == 1) {
-             fireballScroll.failureGraphic();
+             return fireballScroll.failureGraphic();
         } else if (opponentClass == 2) {
-             fireballScroll.graphicalEffect();
+             return fireballScroll.graphicalEffect();
         } else {
-             System.out.println("It's a draw.");
+             return "It's a draw.";
         }
     }
     
-    private void playShieldDefense(PlayerData playerDataList) {
+    private String playShieldDefense(PlayerData playerDataList) {
         int opponentClass = getRandomOpponent();
         if (opponentClass == 1) {
-             shieldDefense.failureGraphic();
+             return shieldDefense.failureGraphic();
         } else if (opponentClass == 2) {
-             shieldDefense.graphicalEffect();
+             return shieldDefense.graphicalEffect();
         } else {
-             System.out.println("It's a draw.");
+             return "It's a draw.";
         }
     }
     
-    private void playLuteMusic(PlayerData playerDataList) {
+    private String playLuteMusic(PlayerData playerDataList) {
         int opponentClass = getRandomOpponent();
         if (opponentClass == 1) {
-             luteMusic.failureGraphic();
+             return luteMusic.failureGraphic();
         } else if (opponentClass == 2) {
-             luteMusic.graphicalEffect();
+             return luteMusic.graphicalEffect();
         } else {
-            System.out.println("It's a draw.");
+            return "It's a draw.";
         }
     }
-    
-    /*private void updateResultLabel(String result) {
-        resultLabel.setText(result);
-    }
-    */
     
     private int getRandomOpponent() {
         return (int) (Math.random() * 3) + 1;
