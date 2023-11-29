@@ -4,7 +4,6 @@ Nicholas Rodriguez (dub7)
 Quetzin Pimentel (q_p12)
 
 
-
 Release Notes: 
 	Existing Bugs
    	 1. Buttons do not change color for MacOS.
@@ -30,6 +29,6 @@ Nick
 - Implemented String failedGraphic in each character
 
 Ibrahim
--Helped in troubleshooting GUI
--Added some comments to our project files 
--Added basic code for 2 new files
+- Helped in troubleshooting GUI
+- Added some comments to our project files 
+- Added basic code for 2 new files
