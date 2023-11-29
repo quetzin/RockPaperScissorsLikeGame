@@ -25,16 +25,16 @@ public class LuteMusic implements Abilities{
     /**
      * Displays a graphical effect when the lute music is played.
      */
-    public String graphicalEffect() {
-        return "The lullaby makes the combatant sleepy.";
+    public void graphicalEffect() {
+        System.out.println("The lullaby makes the combatant sleepy.");
     }
     
     /**
      * Displays a graphical representation of a failure when playing the lute.
      * This method prints a message to the console indicating the failure scenario.
      */
-    public String failureGraphic() {
-        return "Lute is engulfed in flames";
+    public void failureGraphic() {
+        System.out.println("Lute is engulfed in flames");
     }
 
 }

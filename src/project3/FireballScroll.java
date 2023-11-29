@@ -30,15 +30,15 @@ public class FireballScroll implements Abilities{
      * Displays the graphical effects associated with a fireball hitting 
      * the target.
      */
-	public String graphicalEffect() {
-		return "A large ball of flame hurtles toward the target.";
+	public void graphicalEffect() {
+	    System.out.println("A large ball of flame hurtles toward the target.");
 	}
 	
 	/**
 	 * Displays a graphic representation of a failure when a fireball spell rebounds into the mage's scroll.
 	 * This method prints a message to the console indicating the failure scenario.
 	 */
-	public String failureGraphic() {
-	    return "Fireball rebounds into the mage’s scroll!";
+	public void failureGraphic() {
+	    System.out.println("Fireball rebounds into the mage’s scroll!");
 	}
 }

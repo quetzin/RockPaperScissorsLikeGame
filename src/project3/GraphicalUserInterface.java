@@ -29,9 +29,9 @@ public class GraphicalUserInterface extends JFrame implements ActionListener {
     
     private FireballScroll fireballScroll;
     private LuteMusic luteMusic;
-    private ShieldDefense shieldDefense;
-
-    private JLabel resultLabel;
+    private ShieldDefense aaa;
+    
+    JLabel resultLabel = new JLabel();
     
     // Constructor for the GUI
     public GraphicalUserInterface(ArrayList<PlayerData> playerDataList) {
@@ -51,7 +51,7 @@ public class GraphicalUserInterface extends JFrame implements ActionListener {
         
         fireballScroll = new FireballScroll();
         luteMusic = new LuteMusic();
-        shieldDefense = new ShieldDefense();
+        aaa = new ShieldDefense();
 
         // Creating JList and setting selection mode
         playerList = new JList<>(listModel);
@@ -162,36 +162,36 @@ public class GraphicalUserInterface extends JFrame implements ActionListener {
         return null;
     }
     
-    private String playFireball(PlayerData playerDataList) {
+    private void playFireball(PlayerData playerDataList) {
         int opponentClass = getRandomOpponent(); // Implement this method to get a random opponent class
         if (opponentClass == 1) {
-            return fireballScroll.failureGraphic();
+             fireballScroll.failureGraphic();
         } else if (opponentClass == 2) {
-            return fireballScroll.graphicalEffect();
+             fireballScroll.graphicalEffect();
         } else {
-            return "It's a draw.";
+             System.out.println("It's a draw.");
         }
     }
     
-    private String playShieldDefense(PlayerData playerDataList) {
+    private void playShieldDefense(PlayerData playerDataList) {
         int opponentClass = getRandomOpponent();
         if (opponentClass == 1) {
-            return shieldDefense.failureGraphic();
+             aaa.failureGraphic();
         } else if (opponentClass == 2) {
-            return shieldDefense.graphicalEffect();
+             aaa.graphicalEffect();
         } else {
-            return "It's a draw.";
+             System.out.println("It's a draw.");
         }
     }
     
-    private String playLuteMusic(PlayerData playerDataList) {
+    private void playLuteMusic(PlayerData playerDataList) {
         int opponentClass = getRandomOpponent();
         if (opponentClass == 1) {
-            return luteMusic.failureGraphic();
+             luteMusic.failureGraphic();
         } else if (opponentClass == 2) {
-            return luteMusic.graphicalEffect();
+             luteMusic.graphicalEffect();
         } else {
-            return "It's a draw.";
+            System.out.println("It's a draw.");
         }
     }
     

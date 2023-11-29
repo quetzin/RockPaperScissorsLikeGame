@@ -25,9 +25,9 @@ public interface Abilities {
      * This method should provide a visual representation of the 
      * ability's effect.
      */
-    String graphicalEffect();             //Represents the visuals associated 
+    void graphicalEffect();             //Represents the visuals associated 
                                         //  with an ability.
     
-    String failureGraphic();              //Represents the visuals associated 
+    void failureGraphic();              //Represents the visuals associated 
                                         //  with the loss of a battle
 }
