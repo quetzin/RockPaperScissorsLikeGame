@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+import javax.swing.BoxLayout;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -36,8 +37,9 @@ public class GraphicalUserInterface extends JFrame implements ActionListener{
         frame.add(sp);
         sp.setDividerLocation(300);
 
-        lp = new JPanel(new BorderLayout());
-        rp = new JPanel(null);
+        //lp = new JPanel(new BorderLayout());
+        
+       // rp = new JPanel(null);
         
      // Create oDefaultListModel and populate it with PlayerData
         DefaultListModel<String> listModel = new DefaultListModel<>();
@@ -49,8 +51,42 @@ public class GraphicalUserInterface extends JFrame implements ActionListener{
         
         playerList = new JList<>(listModel);
         playerList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        lp.add(new JScrollPane(playerList), BorderLayout.CENTER);
+        
+        playerNameLabel = new JLabel("Player Name");
+        winRateLabel = new JLabel("Win Rate: ");
+        
+        playerList.addListSelectionListener(element -> {
+            String selectedPlayer = playerList.getSelectedValue();
+            if (selectedPlayer != null) {
+                PlayerData selected = getPlayerByName(playerDataList, selectedPlayer);
+                if (selected != null) {
+                playerNameLabel.setText(selected.getFirstName());
+                winRateLabel.setText("Win Rate: " + selected.getWinRate() + "%");
+                }
+            }
+        });
+        
+       // Creates the playerList panel
+        lp = new JPanel(new BorderLayout());
+        // This adds the playerList to the top of the leftPane
+        lp.add(new JScrollPane(playerList), BorderLayout.NORTH);
+        // labelsPanel is for Winrate and playerName
+        JPanel labelsPanel = new JPanel();
+        labelsPanel.setLayout(new BoxLayout(labelsPanel, BoxLayout.Y_AXIS));
+        
+        // adds both labels to the labelPanel
+        labelsPanel.add(playerNameLabel);
+        labelsPanel.add(winRateLabel);
+        
+        // This allows for both of the labels to be positioned vertically at the bottom
+        lp.add(labelsPanel, BorderLayout.SOUTH);
+        
+        // Add the left pane to the left side of the split
         add(lp, BorderLayout.WEST);
+        
+      
+        
+
         
         luteBtn = new JButton("Lute"); //Text for button
         fireballBtn = new JButton("Fireball");
@@ -69,7 +105,7 @@ public class GraphicalUserInterface extends JFrame implements ActionListener{
         shieldBtn.addActionListener(this);
  //---------------------------------------------------   
         
-        
+        rp = new JPanel(null);
         rp.add(luteBtn); //Puts button on right side
         rp.add(fireballBtn);
         rp.add(shieldBtn);
@@ -103,5 +139,16 @@ public class GraphicalUserInterface extends JFrame implements ActionListener{
     public void setPlayerDataList(ArrayList<PlayerData> playerDataList) {
         this.playerDataList = playerDataList;
     }
+    
+    private PlayerData getPlayerByName(ArrayList<PlayerData> playerDataList, String name) {
+        for (PlayerData player : playerDataList) {
+            if (player.getIsActive() && player.getFirstName().equals(name)) {
+                return player;
+            }
+            
+         }
+        return null;
+       }
+    
 
 }
