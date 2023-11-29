@@ -37,9 +37,6 @@ public class GraphicalUserInterface extends JFrame implements ActionListener{
         frame.add(sp);
         sp.setDividerLocation(300);
 
-        //lp = new JPanel(new BorderLayout());
-        
-       // rp = new JPanel(null);
         
      // Create oDefaultListModel and populate it with PlayerData
         DefaultListModel<String> listModel = new DefaultListModel<>();
@@ -52,23 +49,10 @@ public class GraphicalUserInterface extends JFrame implements ActionListener{
         playerList = new JList<>(listModel);
         playerList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         
-        playerNameLabel = new JLabel("Player Name");
+        playerNameLabel = new JLabel("Player Name:");
         winRateLabel = new JLabel("Win Rate: ");
         
-        playerList.addListSelectionListener(element -> {
-            String selectedPlayer = playerList.getSelectedValue();
-            if (selectedPlayer != null) {
-                PlayerData selected = getPlayerByName(playerDataList, selectedPlayer);
-                if (selected != null) {
-                // These two statements are to debug to make sure its selecitng a player
-                System.out.println("Selected player name: " + selected.getFirstName());
-                System.out.println("Selected player win rate: " + selected.getWinRate() + "%");
-                
-                playerNameLabel.setText(selected.getFirstName());
-                winRateLabel.setText("Win Rate: " + selected.getWinRate() + "%");
-                }
-            }
-        });
+
         
        // Creates the playerList panel
         lp = new JPanel(new BorderLayout());
@@ -88,7 +72,8 @@ public class GraphicalUserInterface extends JFrame implements ActionListener{
         // Add the left pane to the left side of the split
         add(lp, BorderLayout.WEST);
         
-        playerList.addListSelectionListener(element -> {
+
+        playerList.addListSelectionListener(e -> {
             String selectedPlayer = playerList.getSelectedValue();
             if (selectedPlayer != null) {
                 PlayerData selected = getPlayerByName(playerDataList, selectedPlayer);
@@ -98,6 +83,7 @@ public class GraphicalUserInterface extends JFrame implements ActionListener{
                 }
             }
         });
+        
         
 
         
@@ -134,15 +120,18 @@ public class GraphicalUserInterface extends JFrame implements ActionListener{
     
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == luteBtn) {
-            rp.setBackground(Color.yellow);
-        }
-        if(e.getSource() == fireballBtn) {
-            rp.setBackground(Color.red);
-        }
-        if(e.getSource() == shieldBtn) {
-            rp.setBackground(Color.blue);
-        }
+       if (playerList.getSelectedValue() != null) {
+           PlayerData selected = getPlayerByName(playerDataList, playerList.getSelectedValue());
+           if (e.getSource() == fireballBtn) {
+               // perform action for fireball btn
+           }
+           else if (e.getSource() == shieldBtn) {
+               // perform action for shieldBtn
+           }
+           else if (e.getSource() == luteBtn) {
+               // Perform action for lute button
+           }
+       }
     }
 
     public ArrayList<PlayerData> getPlayerDataList() {
