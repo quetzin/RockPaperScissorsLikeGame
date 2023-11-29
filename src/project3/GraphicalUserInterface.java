@@ -5,8 +5,7 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-
-import javax.swing.BoxLayout;
+import java.lang.Math;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -27,7 +26,13 @@ public class GraphicalUserInterface extends JFrame implements ActionListener {
     JList<String> playerList; // Should pass a String instead
     JLabel playerNameLabel, winRateLabel;
     private ArrayList<PlayerData> playerDataList;
+    
+    private FireballScroll fireballScroll;
+    private LuteMusic luteMusic;
+    private ShieldDefense shieldDefense;
 
+    private JLabel resultLabel;
+    
     // Constructor for the GUI
     public GraphicalUserInterface(ArrayList<PlayerData> playerDataList) {
         this.playerDataList = playerDataList;
@@ -43,6 +48,10 @@ public class GraphicalUserInterface extends JFrame implements ActionListener {
                 listModel.addElement(playerData.getFirstName() + " " + playerData.getLastName());
             }
         }
+        
+        fireballScroll = new FireballScroll();
+        luteMusic = new LuteMusic();
+        shieldDefense = new ShieldDefense();
 
         // Creating JList and setting selection mode
         playerList = new JList<>(listModel);
@@ -114,6 +123,11 @@ public class GraphicalUserInterface extends JFrame implements ActionListener {
         rp.add(shieldBtn);
  //---------------------------------------------------    
         
+        
+        resultLabel.setBounds(95, 170, 200, 40);
+        rp.add(resultLabel);
+        
+        
         // Setting up the JFrame properties
         sp.setLeftComponent(lp);
         sp.setRightComponent(rp);
@@ -129,11 +143,11 @@ public class GraphicalUserInterface extends JFrame implements ActionListener {
             PlayerData selected = getPlayerByName(playerDataList, playerList.getSelectedValue());
             if (e.getSource() == fireballBtn) {
                 // perform action for fireball btn
-                System.out.println("testing");
+                playFireball(selected);
             } else if (e.getSource() == shieldBtn) {
-                // perform action for shieldBtn
+                playShieldDefense(selected);
             } else if (e.getSource() == luteBtn) {
-                // Perform action for lute button
+                playLuteMusic(selected);
             }
         }
     }
@@ -147,14 +161,47 @@ public class GraphicalUserInterface extends JFrame implements ActionListener {
         }
         return null;
     }
-}
-
-    /*
-    public ArrayList<PlayerData> getPlayerDataList() {
-        return playerDataList;
+    
+    private String playFireball(PlayerData playerDataList) {
+        int opponentClass = getRandomOpponent(); // Implement this method to get a random opponent class
+        if (opponentClass == 1) {
+            return fireballScroll.failureGraphic();
+        } else if (opponentClass == 2) {
+            return fireballScroll.graphicalEffect();
+        } else {
+            return "It's a draw.";
+        }
     }
-
-    public void setPlayerDataList(ArrayList<PlayerData> playerDataList) {
-        this.playerDataList = playerDataList;
+    
+    private String playShieldDefense(PlayerData playerDataList) {
+        int opponentClass = getRandomOpponent();
+        if (opponentClass == 1) {
+            return shieldDefense.failureGraphic();
+        } else if (opponentClass == 2) {
+            return shieldDefense.graphicalEffect();
+        } else {
+            return "It's a draw.";
+        }
+    }
+    
+    private String playLuteMusic(PlayerData playerDataList) {
+        int opponentClass = getRandomOpponent();
+        if (opponentClass == 1) {
+            return luteMusic.failureGraphic();
+        } else if (opponentClass == 2) {
+            return luteMusic.graphicalEffect();
+        } else {
+            return "It's a draw.";
+        }
+    }
+    
+    /*private void updateResultLabel(String result) {
+        resultLabel.setText(result);
     }
     */
+    
+    private int getRandomOpponent() {
+        return (int) (Math.random() * 3) + 1;
+    }
+}
+
