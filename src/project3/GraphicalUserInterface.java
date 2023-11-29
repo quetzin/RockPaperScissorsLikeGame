@@ -83,10 +83,9 @@ public class GraphicalUserInterface extends JFrame implements ActionListener{
                 }
             }
         });
-        
-        
+       
 
-        
+        // Add buttons 
         luteBtn = new JButton("Lute"); //Text for button
         fireballBtn = new JButton("Fireball");
         shieldBtn = new JButton("Shield");
@@ -120,19 +119,24 @@ public class GraphicalUserInterface extends JFrame implements ActionListener{
     
     @Override
     public void actionPerformed(ActionEvent e) {
-       if (playerList.getSelectedValue() != null) {
-           PlayerData selected = getPlayerByName(playerDataList, playerList.getSelectedValue());
-           if (e.getSource() == fireballBtn) {
-               // perform action for fireball btn
-           }
-           else if (e.getSource() == shieldBtn) {
-               // perform action for shieldBtn
-           }
-           else if (e.getSource() == luteBtn) {
-               // Perform action for lute button
-           }
-       }
+        String selectedPlayer = playerList.getSelectedValue();
+        if (selectedPlayer != null) {
+            PlayerData selected = getPlayerByName(playerDataList, selectedPlayer);
+            if (selected != null) {
+                if (e.getSource() == fireballBtn) {
+                    // perform action for fireball btn using 'selected'
+                    System.out.println("Fireball button clicked for player: " + selected.getFirstName());
+                } else if (e.getSource() == shieldBtn) {
+                    // perform action for shieldBtn using 'selected'
+                    System.out.println("Shield button clicked for player: " + selected.getFirstName());
+                } else if (e.getSource() == luteBtn) {
+                    // Perform action for lute button using 'selected'
+                    System.out.println("Lute button clicked for player: " + selected.getFirstName());
+                }
+            }
+        }
     }
+
 
     public ArrayList<PlayerData> getPlayerDataList() {
         return playerDataList;
