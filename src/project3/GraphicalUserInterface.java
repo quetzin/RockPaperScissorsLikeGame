@@ -39,7 +39,7 @@ public class GraphicalUserInterface extends JFrame implements ActionListener {
         JFrame frame = new JFrame("Fireball | Shield | Lute");
         JSplitPane sp = new JSplitPane();
         frame.add(sp);
-        sp.setDividerLocation(300);
+        sp.setDividerLocation(175);
 
         // Creating a DefaultListModel and populating it with PlayerData
         DefaultListModel<String> listModel = new DefaultListModel<>();
@@ -90,9 +90,6 @@ public class GraphicalUserInterface extends JFrame implements ActionListener {
                 }
             }
         });
-        
-        
-
         
         luteBtn = new JButton("Lute"); //Text for button
         fireballBtn = new JButton("Fireball");
