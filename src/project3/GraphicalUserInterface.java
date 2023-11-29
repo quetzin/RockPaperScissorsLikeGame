@@ -63,11 +63,17 @@ public class GraphicalUserInterface extends JFrame implements ActionListener {
 
         lp.add(labelsPanel, BorderLayout.SOUTH);
         add(lp, BorderLayout.WEST);
+        
+        
 
         // Handling player selection event
         playerList.addListSelectionListener(e -> {
+            
             String selectedPlayer = playerList.getSelectedValue();
-            if (selectedPlayer != null) {
+                luteBtn.setVisible(false);
+                fireballBtn.setVisible(false);
+                shieldBtn.setVisible(false);
+                if (selectedPlayer != null) {
                 PlayerData selected = getPlayerByName(playerDataList, selectedPlayer);
                 if (selected != null) {
                     playerNameLabel.setText("Player Name: " + selected.getFirstName());
