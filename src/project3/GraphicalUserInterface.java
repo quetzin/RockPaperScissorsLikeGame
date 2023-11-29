@@ -17,7 +17,11 @@ import javax.swing.JSplitPane;
 import javax.swing.ListSelectionModel;
 
 
-
+/**
+ * GraphicalUserInterface class represents the main graphical user interface
+ * for a game involving players and different actions (Lute, Fireball, Shield).
+ * It extends JFrame and implements ActionListener to handle button click events.
+ */
 public class GraphicalUserInterface extends JFrame implements ActionListener {
 
     private static final long serialVersionUID = 1L;
@@ -34,6 +38,12 @@ public class GraphicalUserInterface extends JFrame implements ActionListener {
     JLabel resultLabel = new JLabel();
     
     // Constructor for the GUI
+
+    /**
+     * Constructor for the GraphicalUserInterface.
+     *
+     * @param playerDataList The list of player data to be displayed and interacted with.
+     */
     public GraphicalUserInterface(ArrayList<PlayerData> playerDataList) {
         this.playerDataList = playerDataList;
         JFrame frame = new JFrame("Fireball | Shield | Lute");
@@ -132,7 +142,11 @@ public class GraphicalUserInterface extends JFrame implements ActionListener {
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);     
     }
-    
+    /**
+     * ActionListener implementation for handling button click events.
+     *
+     * @param e The ActionEvent triggered by a button click.
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         if (playerList.getSelectedValue() != null) {
@@ -150,6 +164,13 @@ public class GraphicalUserInterface extends JFrame implements ActionListener {
         }
     }
     // Helper method to get player by name
+    /**
+     * Helper method to get a player by name from the provided list.
+     *
+     * @param playerDataList The list of player data.
+     * @param name           The name of the player to retrieve.
+     * @return The PlayerData object corresponding to the given name, or null if not found.
+     */
     private PlayerData getPlayerByName(ArrayList<PlayerData> playerDataList, String name) {
         for (PlayerData player : playerDataList) {
             if (player.getIsActive() && (player.getFirstName() + " " + player.getLastName()).equals(name)) {
@@ -158,7 +179,12 @@ public class GraphicalUserInterface extends JFrame implements ActionListener {
         }
         return null;
     }
-    
+    /**
+     * Simulates a player using the Fireball action against a random opponent.
+     *
+     * @param playerData The PlayerData object representing the player performing the action.
+     * @return The result of the Fireball action.
+     */
     private String playFireball(PlayerData playerDataList) {
         int opponentClass = getRandomOpponent(); // Implement this method to get a random opponent class
         if (opponentClass == 1) {
@@ -169,7 +195,12 @@ public class GraphicalUserInterface extends JFrame implements ActionListener {
              return "It's a draw.";
         }
     }
-    
+    /**
+     * Simulates a player using the Shield Defense action against a random opponent.
+     *
+     * @param playerData The PlayerData object representing the player performing the action.
+     * @return The result of the Shield Defense action.
+     */    
     private String playShieldDefense(PlayerData playerDataList) {
         int opponentClass = getRandomOpponent();
         if (opponentClass == 1) {
@@ -180,7 +211,12 @@ public class GraphicalUserInterface extends JFrame implements ActionListener {
              return "It's a draw.";
         }
     }
-    
+    /**
+     * Simulates a player using the Lute Music action against a random opponent.
+     *
+     * @param playerData The PlayerData object representing the player performing the action.
+     * @return The result of the Lute Music action.
+     */    
     private String playLuteMusic(PlayerData playerDataList) {
         int opponentClass = getRandomOpponent();
         if (opponentClass == 1) {
@@ -191,7 +227,11 @@ public class GraphicalUserInterface extends JFrame implements ActionListener {
             return "It's a draw.";
         }
     }
-    
+    /**
+     * Generates a random opponent class for the player actions.
+     *
+     * @return A random opponent class (1, 2, or 3).
+     */    
     private int getRandomOpponent() {
         return (int) (Math.random() * 3) + 1;
     }
